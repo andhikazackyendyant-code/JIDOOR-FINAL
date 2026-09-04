@@ -1,0 +1,25 @@
+.element-logo{
+    font-weight:800!important;
+}
+
+.element-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.quick-option{
+    transition:.18s ease;
+}
+
+.quick-option:hover{
+    transform:translateY(-1px);
+}
+
+.element-image{
+    line-height:0;
+}
+
+.element-image .resize-handle{
+    z-index:2;
+}

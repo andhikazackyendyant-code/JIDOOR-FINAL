@@ -1,0 +1,526 @@
+.checkout-page {
+    max-width: 1100px;
+
+    margin: 120px auto 60px;
+
+    padding: 0 20px;
+}
+
+.checkout-grid {
+    display: flex;
+
+    gap: 30px;
+
+    align-items: flex-start;
+}
+
+.checkout-left {
+    flex: 2;
+}
+
+.checkout-left h2 {
+    margin-bottom: 20px;
+}
+
+.checkout-right {
+    flex: 1;
+
+    min-width: 300px;
+
+    position: sticky;
+
+    top: 100px;
+}
+
+.checkout-item {
+    display: grid;
+
+    grid-template-columns: 80px 1fr 120px;
+
+    gap: 15px;
+
+    align-items: center;
+
+    background: #fff;
+
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    border-radius: 12px;
+}
+
+.checkout-img {
+    width: 80px;
+
+    height: 80px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+.checkout-item h4 {
+    margin: 0 0 5px;
+
+    font-size: 15px;
+}
+
+.checkout-item p {
+    margin: 3px 0;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.checkout-box {
+    background: #fff;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.05);
+}
+
+.checkout-summary {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    font-size: 14px;
+}
+
+.checkout-summary p {
+    margin: 0;
+}
+
+.checkout-summary span {
+    font-weight: 600;
+}
+
+.checkout-summary.total {
+    margin-top: 15px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #eee;
+
+    font-weight: 700;
+
+    color: #8B1E2D;
+}
+
+.checkout-form {
+    background: #fff;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.05);
+}
+
+.checkout-form label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #333;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.checkout-form input,
+.checkout-form textarea {
+    width: 100%;
+
+    padding: 10px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+}
+
+.checkout-form textarea {
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+.checkout-form input:focus,
+.checkout-form textarea:focus {
+    border-color: #8B1E2D;
+}
+
+.btn-order {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #8B1E2D;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.btn-order:hover {
+    background: #6f1724;
+}
+
+.payment-section {
+    margin-top: 22px;
+}
+
+.payment-section h3 {
+    margin: 0 0 14px;
+
+    color: #222;
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+.payment-option {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    min-height: 80px;
+
+    margin: 0 0 10px;
+
+    padding: 14px 18px;
+
+    box-sizing: border-box;
+
+    gap: 16px;
+
+    border: 1px solid #dedede;
+
+    border-radius: 12px;
+
+    background: #fff;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.payment-option input[type="radio"] {
+    appearance: none;
+
+    width: 22px !important;
+    height: 22px !important;
+
+    min-width: 22px;
+    max-width: 22px;
+
+    margin: 0 !important;
+    padding: 0;
+
+    flex: 0 0 22px;
+
+    border: 1.5px solid #999;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    position: relative;
+
+    cursor: pointer;
+}
+
+.payment-option input[type="radio"]:checked {
+    border-color: #9b1e32;
+}
+
+.payment-option input[type="radio"]:checked::after {
+    content: "";
+
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #9b1e32;
+}
+
+.payment-text {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 5px;
+
+    line-height: 1.4;
+}
+
+.payment-text.payment-stack {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 2px;
+}
+
+.payment-text strong {
+    margin: 0;
+
+    color: #333;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+.payment-text small {
+    margin: 0;
+
+    color: #555;
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    line-height: 1.4;
+}
+
+.payment-option:hover {
+    border-color: #9b1e32;
+
+    background: #fffafa;
+}
+
+.ewallet-options {
+    margin: -2px 0 15px 30px;
+
+    padding: 15px;
+
+    border: 1px solid #eee;
+
+    border-radius: 12px;
+
+    background: #fafafa;
+}
+
+.ewallet-title {
+    margin: 0 0 10px;
+
+    color: #333;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.ewallet-choice {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-height: 38px;
+
+    padding: 7px 10px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.ewallet-choice:hover {
+    background: #fff;
+
+    color: #9b1e32;
+}
+
+.ewallet-choice input[type="radio"] {
+    width: 17px !important;
+
+    height: 17px !important;
+
+    min-width: 17px;
+
+    max-width: 17px;
+
+    margin: 0 !important;
+
+    accent-color: #9b1e32;
+}
+
+.ewallet-number {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 12px;
+
+    padding: 14px;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 10px;
+
+    background: #fff;
+}
+
+.ewallet-number span {
+    color: #777;
+
+    font-size: 12px;
+}
+
+.ewallet-number strong {
+    flex: 1;
+
+    color: #9b1e32;
+
+    font-size: 16px;
+}
+
+.ewallet-number button {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 7px 11px;
+
+    border: 1px solid #9b1e32;
+
+    border-radius: 7px;
+
+    background: #fff;
+
+    color: #9b1e32;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.ewallet-number button:hover {
+    background: #9b1e32;
+
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+
+    .checkout-page {
+        margin-top: 40px;
+
+        padding: 0 15px;
+    }
+
+    .checkout-grid {
+        flex-direction: column;
+    }
+
+    .checkout-left,
+    .checkout-right {
+        width: 100%;
+
+        flex: none;
+    }
+
+    .checkout-right {
+        position: static;
+
+        min-width: 0;
+    }
+
+    .checkout-item {
+        grid-template-columns: 70px 1fr;
+
+        gap: 12px;
+    }
+
+    .checkout-img {
+        width: 70px;
+
+        height: 70px;
+    }
+
+    .checkout-item > div:last-child {
+        grid-column: 2;
+
+        text-align: left;
+    }
+
+    .ewallet-options {
+        margin-left: 0;
+    }
+
+    .ewallet-number {
+        flex-wrap: wrap;
+    }
+
+}
+
+.checkout-custom-design{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    margin:6px 0 0;
+    color:#8B1E2D;
+    font-size:12px;
+    font-weight:600;
+}
+.checkout-custom-design i{
+    font-size:13px;
+}
+
+
+/* E-wallet: tampilkan nomor saja */
+.ewallet-number #ewalletName{display:none!important;}
+.ewallet-number > div{flex:1;min-width:0;}
+.ewallet-number #ewalletPhone{display:block;line-height:1.35;}

@@ -1,0 +1,514 @@
+* {
+    box-sizing: border-box;
+}
+
+body.auth-page {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: "DM Sans", sans-serif;
+
+    background: #f5f6fa;
+    color: #222;
+}
+
+.auth-shell {
+    width: min(1100px, calc(100% - 40px));
+
+    min-height: 650px;
+
+    margin: 35px auto;
+
+    display: grid;
+
+    grid-template-columns: 45% 55%;
+
+    background: #ffffff;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, .10);
+}
+
+.brand-panel {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 55px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #951c31,
+            #6f1022
+        );
+
+    color: #ffffff;
+}
+
+.brand {
+    display: inline-flex;
+
+    width: fit-content;
+
+    margin-bottom: 55px;
+
+    text-decoration: none;
+}
+
+.brand-logo {
+    width: 280px;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.brand-copy {
+    max-width: 420px;
+}
+
+.eyebrow {
+    margin: 0 0 12px;
+
+    color: #ffd166;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.brand-copy h1 {
+    margin: 0 0 18px;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 38px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+}
+
+.brand-copy p {
+    margin: 0;
+
+    color: rgba(255,255,255,.86);
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+.login-products {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 25px;
+}
+
+.login-products span {
+    padding: 7px 14px;
+
+    border: 1px solid rgba(255,255,255,.35);
+
+    border-radius: 30px;
+
+    color: #ffffff;
+
+    font-size: 12px;
+}
+
+.form-panel {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 45px 60px;
+
+    background: #ffffff;
+}
+
+.form-wrap {
+    width: 100%;
+
+    max-width: 430px;
+}
+
+.mobile-brand {
+    display: none;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+    color: #8b1e2d;
+
+    text-decoration: none;
+}
+
+.mobile-brand .brand-logo {
+    width: 190px;
+
+    filter: none;
+}
+
+.form-wrap > .eyebrow {
+    color: #8b1e2d;
+}
+
+.form-wrap h2 {
+    margin: 0 0 8px;
+
+    color: #8b1e2d;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 32px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+}
+
+.form-intro {
+    margin: 0 0 25px;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+#registerForm {
+    width: 100%;
+}
+
+#registerForm .form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #222;
+
+    font-size: 12px;
+
+    font-weight: 650;
+}
+
+.form-group input {
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dedede;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #222;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 13px;
+
+    transition: .2s ease;
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+}
+
+.form-group input:focus {
+    border-color: #8b1e2d;
+
+    box-shadow:
+        0 0 0 3px rgba(139,30,45,.08);
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 45px;
+}
+
+.toggle-password {
+    position: absolute;
+
+    top: 50%;
+
+    right: 12px;
+
+    transform: translateY(-50%);
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+
+    color: #888;
+
+    cursor: pointer;
+}
+
+.toggle-password:hover {
+    color: #8b1e2d;
+}
+
+.password-strength {
+    margin-top: 7px;
+
+    font-size: 11px;
+
+    color: #888;
+}
+
+.form-check {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    margin: 5px 0 20px;
+}
+
+.form-check input {
+    width: 16px;
+    height: 16px;
+
+    margin-top: 2px;
+
+    accent-color: #8b1e2d;
+
+    cursor: pointer;
+}
+
+.form-check label {
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+.form-check a {
+    color: #8b1e2d;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.form-check a:hover {
+    text-decoration: underline;
+}
+
+.primary-button {
+    width: 100%;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #8b1e2d;
+
+    color: #ffffff;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.primary-button:hover {
+    background: #741724;
+
+    transform: translateY(-1px);
+}
+
+.auth-switch {
+    margin: 20px 0 0;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+.auth-switch a {
+    color: #8b1e2d;
+
+    font-weight: 650;
+
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+.field-error {
+    min-height: 15px;
+
+    margin-top: 5px;
+
+    color: #c62828;
+
+    font-size: 11px;
+}
+
+.toast-container {
+    position: fixed;
+
+    right: 24px;
+
+    bottom: 24px;
+
+    z-index: 9999;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+@media (max-width: 850px) {
+
+    .auth-shell {
+        width: min(600px, calc(100% - 30px));
+
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+    }
+
+    .brand-panel {
+        min-height: 300px;
+
+        padding: 40px;
+    }
+
+    .brand {
+        margin-bottom: 35px;
+    }
+
+    .brand-copy h1 {
+        font-size: 31px;
+    }
+
+    .form-panel {
+        padding: 40px;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .auth-shell {
+        width: calc(100% - 20px);
+
+        margin: 10px auto;
+
+        border-radius: 18px;
+    }
+
+    .brand-panel {
+        min-height: 270px;
+
+        padding: 30px;
+    }
+
+    .brand-logo {
+        width: 220px;
+    }
+
+    .brand-copy h1 {
+        font-size: 27px;
+    }
+
+    .brand-copy p {
+        font-size: 13px;
+    }
+
+    .form-panel {
+        padding: 30px 22px;
+    }
+
+    .form-wrap h2 {
+        font-size: 28px;
+    }
+
+    #registerForm .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+}

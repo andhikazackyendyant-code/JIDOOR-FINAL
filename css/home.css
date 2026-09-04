@@ -1,0 +1,724 @@
+.hero {
+  padding: 120px 0 80px;
+  background: linear-gradient(135deg, #8B1E2D, #a8323e);
+  padding-top: 72px;
+}
+
+.hero-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-left {
+  width: 50%;
+  color: white;
+}
+
+.hero-left h1 {
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: white;
+}
+
+.hero-left p {
+  margin-top: 20px;
+  color: #f1f1f1;
+  line-height: 1.6;
+}
+
+.hero-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: #FFD166;
+  padding: 12px 25px;
+  border-radius: 25px;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+.btn-design {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 160px;
+  height: 48px;
+  padding: 0 24px;
+
+  border-radius: 25px;
+
+  background: #8B1E2D;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.btn-design:hover {
+  background: #741724;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 2px solid white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #8B1E2D;
+}
+
+.btn-order {
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  background: #8B1E2D;
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.hero-right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-right img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 15px;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.hero-right img:hover {
+  transform: scale(1.03);
+}
+
+.hero {
+    padding: 80px 0 70px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8B1E2D,
+            #a8323e
+        );
+    padding-top: 72px;
+}
+
+.hero-content {
+  flex: 1;
+  color: white;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+   object-fit: cover;
+
+  border-radius: 20px;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+
+  transition: 0.3s;
+
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+}
+
+.home-main {
+    padding-top: 72px;
+}
+
+.stats {
+  margin-top: -80px;
+  position: relative;
+  z-index: 10;
+}
+
+.stats-box {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.stat-item h2 {
+  color: #8B1E2D;
+  font-size: 32px;
+}
+
+.stat-item p {
+  margin-top: 5px;
+  color: #666;
+}
+
+.why {
+  padding: 80px 0;
+  background: linear-gradient(
+    180deg,
+    #f8f9fc 0%,
+    #ffffff 100%
+  );
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+  color: #8B1E2D;
+}
+
+.why-box {
+  display: flex;
+  gap: 20px;
+}
+
+.why-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  flex: 1;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.why-card:hover {
+  transform: translateY(-10px);
+}
+
+.produk {
+    padding: 90px 0 100px;
+    background: #f8f9fc;
+}
+
+.produk .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.produk .section-title {
+    margin: 0;
+    text-align: center;
+
+    color: #8B1E2D;
+
+    font-size: 34px;
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+.section-subtitle {
+    margin: 10px 0 40px;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+.produk-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+
+    align-items: stretch;
+}
+
+.produk-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.07);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.produk-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.12);
+}
+
+.produk-card > img {
+
+    width: 100%;
+
+    height: 250px;
+
+    display: block;
+
+    object-fit: cover;
+
+    background: #f1f1f1;
+}
+
+.produk-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    padding: 22px;
+}
+
+.produk-content h3 {
+
+    margin: 0 0 8px;
+
+    color: #222;
+
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+.produk-content p {
+
+    margin: 0 0 20px;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.btn-produk {
+
+    width: 100%;
+
+    min-height: 44px;
+
+    margin-top: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #8B1E2D;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: .25s ease;
+}
+
+.btn-produk:hover {
+
+    background: #741724;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+@media (max-width: 950px) {
+
+    .produk-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .produk {
+
+        padding: 65px 0 70px;
+
+    }
+
+    .produk .section-title {
+
+        font-size: 28px;
+
+    }
+
+    .section-subtitle {
+
+        margin-bottom: 30px;
+
+        font-size: 13px;
+
+    }
+
+    .produk-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+    }
+
+    .produk-card > img {
+
+        height: 230px;
+
+    }
+
+}
+
+@media (max-width: 600px) {
+  .hero-btn {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-btn .btn-primary,
+  .hero-btn .btn-design {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+
+/* =========================================================
+   Katalog Produk - Poster Carousel
+   Satu poster penuh per slide, tanpa crop, dan seluruh poster clickable.
+   ========================================================= */
+.produk-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    width: 100%;
+}
+
+.produk-carousel-viewport {
+    overflow: hidden;
+    width: min(1000px, calc(100% - 120px));
+    padding: 6px 0 16px;
+}
+
+.produk-carousel-track {
+    display: flex;
+    gap: 0;
+    align-items: flex-start;
+    transition: transform .45s ease;
+    will-change: transform;
+}
+
+.produk-carousel-track .produk-card {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+    height: auto !important;
+    overflow: visible;
+    display: block;
+    background: transparent;
+    border: 0;
+    border-radius: 16px;
+    box-shadow: none;
+}
+
+.produk-poster-link {
+    position: relative;
+    z-index: 3;
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    line-height: 0;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.produk-poster-link:hover,
+.produk-poster-link:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
+    outline: none;
+}
+
+.produk-carousel-track .produk-card > .produk-poster-link > img {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center;
+    background: #fff;
+    border-radius: 14px;
+}
+
+/* Informasi kartu disembunyikan: carousel hanya menampilkan poster. */
+.produk-carousel-track .produk-content {
+    display: none;
+}
+
+.carousel-control {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    border: 1px solid #e4e4e4;
+    border-radius: 50%;
+    background: #fff;
+    color: #8B1E2D;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+    z-index: 5;
+}
+
+.carousel-control:hover:not(:disabled) {
+    background: #8B1E2D;
+    color: #fff;
+}
+
+.carousel-control:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 2px;
+}
+
+.carousel-dots button {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #d7d7d7;
+    cursor: pointer;
+}
+
+.carousel-dots button.active {
+    width: 22px;
+    border-radius: 999px;
+    background: #8B1E2D;
+}
+
+@media (max-width: 700px) {
+    .produk-carousel {
+        gap: 7px;
+    }
+
+    .produk-carousel-viewport {
+        width: calc(100% - 78px);
+    }
+
+    .carousel-control {
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+    }
+
+    .produk-carousel-track .produk-card > .produk-poster-link > img {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+
+
+/* =========================================================
+   FINAL FIX - Poster Produk Carousel
+   Poster tampil 100% utuh tanpa crop.
+   Tinggi mengikuti rasio gambar asli.
+   ========================================================= */
+.produk-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    width: 100%;
+}
+
+.produk-carousel-viewport {
+    width: min(1120px, calc(100% - 120px));
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: hidden;
+    padding: 0 0 18px;
+}
+
+.produk-carousel-track {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    transition: transform .45s ease;
+    will-change: transform;
+}
+
+.produk-carousel-track .produk-card {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    display: block;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.produk-carousel-track .produk-card .produk-poster-link {
+    position: relative;
+    z-index: 10;
+    display: block;
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    overflow: visible !important;
+    line-height: 0;
+    text-decoration: none;
+    cursor: pointer;
+    pointer-events: auto;
+    border-radius: 14px;
+}
+
+.produk-carousel-track .produk-card .produk-poster-link img {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    object-fit: initial !important;
+    object-position: initial !important;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border-radius: 14px;
+    pointer-events: none;
+}
+
+.produk-carousel-track .produk-card .produk-content {
+    display: none !important;
+}
+
+.produk-carousel-track .produk-card .produk-poster-link:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.produk-carousel-track .produk-card .produk-poster-link:focus-visible {
+    outline: 3px solid #8B1E2D;
+    outline-offset: 3px;
+}
+
+.carousel-control {
+    flex: 0 0 44px;
+}
+
+@media (max-width: 700px) {
+    .produk-carousel {
+        gap: 7px;
+    }
+
+    .produk-carousel-viewport {
+        width: calc(100% - 72px);
+        padding-bottom: 12px;
+    }
+
+    .carousel-control {
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+    }
+}

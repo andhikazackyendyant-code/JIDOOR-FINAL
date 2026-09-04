@@ -1,0 +1,460 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 76px;
+
+    z-index: 999;
+
+    background: linear-gradient(
+        135deg,
+        #751426,
+        #941b33,
+        #751426
+    );
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+
+    box-sizing: border-box;
+}
+
+.navbar::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:url("../img/navbar.jpg");
+
+    opacity:.08;
+
+}
+
+.nav-container {
+    width: min(1280px, calc(100% - 70px));
+
+    height: 76px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    width: 165px;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+
+    max-height: 58px;
+
+    object-fit: contain;
+    object-position: left center;
+
+    display: block;
+}
+
+.menu {
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 34px;
+}
+
+.menu a {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 8px 0;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: .2s ease;
+}
+
+.menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-5px;
+
+    width:0;
+
+    height:2px;
+
+    background:#FFD166;
+
+    transition:.3s;
+
+}
+
+.menu a:hover::after{
+
+    width:100%;
+
+}
+
+.menu a:hover,
+
+.menu a.active{
+
+    color:#FFD166;
+
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-left: 28px;
+}
+
+.search-box {
+    position: relative;
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.search-box input {
+    width: 250px;
+    height: 42px;
+
+    box-sizing: border-box;
+
+    padding: 0 45px 0 18px;
+
+    border: none;
+    border-radius: 25px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.search-box i {
+    position: absolute;
+
+    right: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #666;
+
+    font-size: 18px;
+
+    pointer-events: none;
+}
+
+.btn-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 96px;
+    height: 42px;
+
+    padding: 0 20px;
+
+    background: #FFD166;
+    color: #111 !important;
+
+    border: none;
+    border-radius: 25px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    position: relative;
+    z-index: 10;
+
+    transition: .2s ease;
+}
+
+.btn-login:hover {
+    background: #ffcf4d;
+    color: #111 !important;
+    transform: translateY(-1px);
+}
+
+.cart-badge{
+
+    background:#ff4444;
+
+    color:#fff;
+
+    font-size:11px;
+
+    padding:2px 6px;
+
+    border-radius:20px;
+
+    margin-left:5px;
+
+}
+
+#authArea {
+    position: relative;
+    z-index: 20;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: auto;
+}
+
+.user-dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.user-btn {
+    height: 44px;
+    min-width: 166px;
+
+    padding: 0 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    border: none;
+    border-radius: 25px;
+
+    background: #ffffff;
+    color: #222222;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.user-btn > i:first-child {
+    font-size: 18px;
+    color: #222222;
+}
+
+.user-btn > i:last-child {
+    font-size: 13px;
+    color: #222222;
+
+    transition: transform .2s ease;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+
+    width: 225px;
+    padding: 8px;
+
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 14px;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.16);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-5px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+
+    z-index: 99999;
+
+    box-sizing: border-box;
+}
+
+.user-dropdown:hover .dropdown-content,
+.user-dropdown:focus-within .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-content::before {
+    content: "";
+
+    position: absolute;
+
+    top: -10px;
+    left: 0;
+
+    width: 100%;
+    height: 10px;
+}
+
+.user-dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+    display: block;
+}
+
+.dropdown-content a,
+.dropdown-content .dropdown-logout {
+    width: 100%;
+    min-height: 44px;
+
+    padding: 10px 12px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    box-sizing: border-box;
+
+    border: none;
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: #333333;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 400;
+
+    text-decoration: none;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease,
+                color 0.2s ease;
+}
+
+.dropdown-content a i,
+.dropdown-content .dropdown-logout i {
+    width: 22px;
+
+    flex-shrink: 0;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    color: #a51d36;
+}
+
+.dropdown-content a:hover,
+.dropdown-content .dropdown-logout:hover {
+    background: #f6f6f6;
+    color: #a51d36;
+}
+
+.dropdown-content .dropdown-logout {
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    margin: 0;
+}
+
+.dropdown-content .dropdown-logout i {
+
+    width: 20px;
+
+    color: #8f1d30;
+
+    font-size: 16px;
+
+    text-align: center;
+
+    flex-shrink: 0;
+
+}
+
+.dropdown-content .dropdown-logout:hover {
+
+    background: #f7f7f7;
+
+    color: #8f1d30;
+
+}
+
+.dropdown-content .dropdown-logout:hover i {
+
+    color: #8f1d30;
+
+}
+
+.dropdown-content a i {
+
+    width: 20px;
+
+    color: #8f1d30;
+
+    font-size: 16px;
+
+    text-align: center;
+
+}
+
+.dropdown-content a:hover {
+
+    background: #f7f7f7;
+
+    color: #8f1d30;
+
+}
+
+.dropdown-content a:hover i {
+
+    color: #8f1d30;
+
+}

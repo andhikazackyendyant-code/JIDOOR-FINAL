@@ -1,0 +1,97 @@
+/* Checkout final visual fixes */
+
+.checkout-form {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.checkout-form .payment-option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    min-height: 72px;
+    margin: 0 0 10px;
+    padding: 16px 18px;
+    box-sizing: border-box;
+    border: 1px solid #dedede;
+    border-radius: 14px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.checkout-form .payment-option input[type="radio"] {
+    flex: 0 0 22px;
+    width: 22px !important;
+    height: 22px !important;
+    margin: 0 !important;
+}
+
+.checkout-form .payment-option span {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px;
+    line-height: 1.45;
+}
+
+.checkout-form .payment-option strong {
+    font-size: 15px;
+    font-weight: 700;
+    color: #333;
+}
+
+.checkout-form .payment-option small,
+.checkout-form .payment-option span small {
+    font-size: 13px;
+    color: #666;
+}
+
+.checkout-form .btn-order,
+.checkout-form button[type="submit"] {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 8px;
+    padding: 13px 18px;
+    border: 0;
+    border-radius: 12px;
+    background: #8B1E2D;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.checkout-form .btn-order:hover,
+.checkout-form button[type="submit"]:hover {
+    background: #6f1724;
+    transform: translateY(-1px);
+}
+
+.ewallet-options {
+    margin: 0 0 12px 36px;
+    padding: 14px;
+    box-sizing: border-box;
+    border: 1px solid #ececec;
+    border-radius: 12px;
+    background: #fafafa;
+}
+
+@media (max-width: 600px) {
+    .checkout-form .payment-option {
+        min-height: 68px;
+        padding: 14px;
+    }
+
+    .ewallet-options {
+        margin-left: 0;
+    }
+}

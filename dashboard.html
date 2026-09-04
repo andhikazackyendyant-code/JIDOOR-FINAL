@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Jidoor Konveksi</title>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/admin.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+<link rel="stylesheet" href="../assets/css/mobile-responsive.css">
+</head>
+
+<body>
+    <div class="admin-shell">
+
+        <aside
+            class="admin-sidebar"
+            id="adminSidebar"
+        >
+            <a
+                href="dashboard.html"
+                class="admin-brand"
+            >
+                <img
+                    src="../assets/img/JIDOOR LOGO.png"
+                    alt="Jidoor"
+                >
+
+                <div>
+                    <strong>JIDOOR</strong>
+                    <span>ADMIN PANEL</span>
+                </div>
+            </a>
+
+            <nav class="admin-nav">
+            <a href="dashboard.html" class="active">
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="pesanan.html" class="">
+                <i class="bi bi-receipt"></i>
+                <span>Pesanan</span>
+            </a>
+            <a href="produk.html" class="">
+                <i class="bi bi-box-seam"></i>
+                <span>Produk</span>
+            </a>
+            <a href="design-studio.html" class="">
+                <i class="bi bi-palette"></i>
+                <span>Design Studio</span>
+            </a>
+            <a href="media.html" class="">
+                <i class="bi bi-images"></i>
+                <span>Media & Konten</span>
+            </a>
+            <a href="carousel.html"><i class="bi bi-arrow-repeat"></i><span>Carousel</span></a>
+            <a href="pelanggan.html" class="">
+                <i class="bi bi-people"></i>
+                <span>Pelanggan</span>
+            </a>
+            <a href="pengaturan.html" class="">
+                <i class="bi bi-gear"></i>
+                <span>Pengaturan</span>
+            </a>
+            </nav>
+
+            <div class="admin-sidebar-bottom">
+                <button
+                    class="admin-logout"
+                    type="button"
+                    onclick="adminLogout()"
+                >
+                    <i class="bi bi-box-arrow-left"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="admin-main">
+
+            <header class="admin-topbar">
+                <button
+                    class="admin-mobile"
+                    id="menuButton"
+                    type="button"
+                    aria-label="Buka menu admin"
+                >
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Kelola dan pantau aktivitas Jidoor Konveksi.</p>
+                </div>
+
+                <div class="admin-user">
+                    <div class="admin-user-avatar">
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+
+                    <div class="admin-user-text">
+                        <strong data-admin-name>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="admin-content">
+
+                <div class="stat-grid">
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-label">Total Pesanan</span>
+                            <span class="stat-icon">
+                                <i class="bi bi-receipt"></i>
+                            </span>
+                        </div>
+
+                        <div
+                            class="stat-value"
+                            id="totalOrders"
+                        >
+                            0
+                        </div>
+
+                        <div class="stat-note">
+                            Seluruh pesanan tersimpan
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-label">Pesanan Baru</span>
+                            <span class="stat-icon">
+                                <i class="bi bi-bell"></i>
+                            </span>
+                        </div>
+
+                        <div
+                            class="stat-value"
+                            id="newOrders"
+                        >
+                            0
+                        </div>
+
+                        <div class="stat-note">
+                            Menunggu diproses
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-label">Sedang Diproses</span>
+                            <span class="stat-icon">
+                                <i class="bi bi-arrow-repeat"></i>
+                            </span>
+                        </div>
+
+                        <div
+                            class="stat-value"
+                            id="processingOrders"
+                        >
+                            0
+                        </div>
+
+                        <div class="stat-note">
+                            Dalam pengerjaan
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-label">Pesanan Selesai</span>
+                            <span class="stat-icon">
+                                <i class="bi bi-check2-circle"></i>
+                            </span>
+                        </div>
+
+                        <div
+                            class="stat-value"
+                            id="completedOrders"
+                        >
+                            0
+                        </div>
+
+                        <div class="stat-note">
+                            Pesanan selesai
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="admin-grid">
+
+                    <section class="admin-card">
+                        <div class="card-heading">
+                            <h2>Pesanan Terbaru</h2>
+
+                            <a href="pesanan.html">
+                                Lihat Semua
+                            </a>
+                        </div>
+
+                        <div class="table-wrap">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>No. Pesanan</th>
+                                        <th>Pelanggan</th>
+                                        <th>Produk</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="recentOrders"></tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="admin-card">
+                        <div class="card-heading">
+                            <h2>Akses Cepat</h2>
+                        </div>
+
+                        <div class="quick-grid">
+
+                            <a
+                                class="quick-link"
+                                href="produk.html"
+                            >
+                                <i class="bi bi-box-seam"></i>
+
+                                <div>
+                                    <strong>Kelola Produk</strong>
+                                    <span>
+                                        Foto, harga, warna & ukuran
+                                    </span>
+                                </div>
+                            </a>
+
+                            <a
+                                class="quick-link"
+                                href="media.html"
+                            >
+                                <i class="bi bi-images"></i>
+
+                                <div>
+                                    <strong>Media & Konten</strong>
+                                    <span>
+                                        Logo, banner dan gambar
+                                    </span>
+                                </div>
+                            </a>
+
+                            <a
+                                class="quick-link"
+                                href="design-studio.html"
+                            >
+                                <i class="bi bi-palette"></i>
+
+                                <div>
+                                    <strong>Design Studio</strong>
+                                    <span>
+                                        Mockup dan warna
+                                    </span>
+                                </div>
+                            </a>
+
+                            <a
+                                class="quick-link"
+                                href="pesanan.html"
+                            >
+                                <i class="bi bi-receipt"></i>
+
+                                <div>
+                                    <strong>Kelola Pesanan</strong>
+                                    <span>
+                                        Status dan detail pesanan
+                                    </span>
+                                </div>
+                            </a>
+
+                        </div>
+                    </section>
+
+                </div>
+
+                <div class="admin-grid admin-dashboard-lower">
+                    <section class="admin-card">
+                        <div class="card-heading">
+                            <h2>Ringkasan Website</h2>
+                            <a href="produk.html">Kelola</a>
+                        </div>
+                        <div class="quick-grid">
+                            <div class="quick-link">
+                                <i class="bi bi-box-seam"></i>
+                                <div><strong id="dashboardProductCount">0 produk</strong><span>Produk di katalog</span></div>
+                            </div>
+                            <div class="quick-link">
+                                <i class="bi bi-images"></i>
+                                <div><strong id="dashboardMediaStatus">0 aset</strong><span>Aset media tersimpan</span></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="admin-card">
+                        <div class="card-heading"><h2>Aktivitas Terakhir</h2></div>
+                        <div id="adminActivityList" class="activity-list-admin"></div>
+                    </section>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <script src="../assets/js/admin.js"></script>
+    <script src="../assets/js/admin-dashboard.js"></script>
+
+</body>
+</html>

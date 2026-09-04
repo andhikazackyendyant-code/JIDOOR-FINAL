@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Studio | Jidoor Konveksi</title>
+<link rel="stylesheet" href="../assets/css/global.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="../assets/css/mobile-responsive.css">
+</head>
+<body>
+<div class="admin-shell">
+<aside class="admin-sidebar" id="adminSidebar">
+<a href="dashboard.html" class="admin-brand"><img src="../assets/img/JIDOOR LOGO.png" alt="Jidoor"><div><strong>JIDOOR</strong><span>ADMIN PANEL</span></div></a>
+<nav class="admin-nav">
+<a href="dashboard.html"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a>
+<a href="pesanan.html"><i class="bi bi-receipt"></i><span>Pesanan</span></a>
+<a href="produk.html"><i class="bi bi-box-seam"></i><span>Produk</span></a>
+<a href="design-studio.html" class="active"><i class="bi bi-palette"></i><span>Design Studio</span></a>
+<a href="media.html"><i class="bi bi-images"></i><span>Media & Konten</span></a>
+<a href="carousel.html"><i class="bi bi-images"></i><span>Carousel</span></a>
+<a href="pelanggan.html"><i class="bi bi-people"></i><span>Pelanggan</span></a>
+<a href="pengaturan.html"><i class="bi bi-gear"></i><span>Pengaturan</span></a>
+</nav>
+<div class="admin-sidebar-bottom"><button class="admin-logout" type="button" onclick="adminLogout()"><i class="bi bi-box-arrow-left"></i><span>Logout</span></button></div>
+</aside>
+
+<main class="admin-main">
+<header class="admin-topbar">
+<button class="admin-mobile" id="menuButton" type="button"><i class="bi bi-list"></i></button>
+<div><h1>Design Studio</h1><p>Atur pilihan yang tersedia di editor desain user.</p></div>
+<div class="admin-user"><div class="admin-user-avatar"><i class="bi bi-person-fill"></i></div><div class="admin-user-text"><strong data-admin-name>Admin</strong><span>Administrator</span></div></div>
+</header>
+
+<section class="admin-content">
+<div class="page-toolbar"><div><h2>Kontrol Design Studio</h2><p>Pilih opsi yang ingin tersedia dan kelola mockup setiap produk.</p></div></div>
+
+<form id="studioForm">
+<section class="form-card">
+<h2 class="section-title-admin">Jenis Produk</h2>
+<div id="studioProducts" class="option-check-grid"></div>
+</section>
+
+<section class="form-card content-section-admin">
+<h2 class="section-title-admin">Warna</h2>
+<p class="admin-form-hint">Daftar ini mengikuti pilihan warna Jidoor. Centang untuk mengaktifkan warna di konfigurasi Design Studio.</p>
+<div id="studioColors" class="option-check-grid color-option-grid"></div>
+</section>
+
+<section class="form-card content-section-admin">
+<h2 class="section-title-admin">Ukuran</h2>
+<div id="studioSizes" class="option-check-grid compact"></div>
+</section>
+
+<section class="form-card content-section-admin">
+<h2 class="section-title-admin">Tipe Lengan</h2>
+<div id="studioSleeves" class="option-check-grid"></div>
+</section>
+
+<section class="form-card content-section-admin">
+<h2 class="section-title-admin">Opsi Desain</h2>
+<div id="studioDesignOptions" class="option-check-grid"></div>
+</section>
+
+<section class="form-card content-section-admin">
+<div class="card-heading"><h2 class="section-title-admin">Mockup Produk</h2><span class="admin-form-hint">Mockup disimpan di jidoorStudioSettings.</span></div>
+<div id="mockupGrid" class="media-control-grid"></div>
+</section>
+
+<div class="admin-save-row">
+<button class="btn-admin btn-secondary" id="resetStudio" type="button">Kembalikan Default</button>
+<button class="btn-admin btn-primary" type="submit"><i class="bi bi-check2"></i> Simpan Design Studio</button>
+</div>
+</form>
+</section>
+</main>
+</div>
+<script src="../assets/js/admin.js"></script>
+<script src="../assets/js/admin-design-studio.js"></script>
+</body>
+</html>

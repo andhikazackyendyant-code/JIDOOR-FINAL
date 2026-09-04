@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>Pembayaran | Jidoor Konveksi</title>
+
+<link
+    rel="stylesheet"
+    href="assets/css/global.css">
+
+<link
+    rel="stylesheet"
+    href="assets/css/navbar.css">
+
+<link
+    rel="stylesheet"
+    href="assets/css/pembayaran.css">
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/uniform.css">
+<link rel="stylesheet" href="assets/css/mobile-responsive.css">
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+<div class="navbar">
+
+    <div class="nav-container">
+
+        <div class="logo">
+
+            <img
+                src="assets/img/JIDOOR LOGO.png"
+                alt="Jidoor Konveksi">
+
+        </div>
+
+        <div class="menu">
+    <a href="index.html" class="nav-link">Beranda</a>
+    <a href="lihat-produk.html" class="nav-link">Produk</a>
+    <a href="keranjang.html" class="nav-link">Keranjang
+    <span id="cartBadge" class="cart-badge">0</span>
+    </a>
+    <a href="kontak.html" class="nav-link">Kontak</a>
+
+        </div>
+
+        <div class="nav-right">
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    placeholder="Cari produk...">
+
+                <i class="bi bi-search"></i>
+
+            </div>
+
+            <div id="authArea">
+
+                <a
+                    href="login.html"
+                    class="btn-login">
+
+                    Masuk
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<main class="payment-page">
+
+    <div class="payment-header">
+
+        <span>
+            PEMBAYARAN
+        </span>
+
+        <h1>
+            Pembayaran Pesanan
+        </h1>
+
+        <p>
+            Selesaikan pembayaran untuk
+            melanjutkan pesanan Anda.
+        </p>
+
+    </div>
+
+    <div id="paymentContent">
+
+    </div>
+
+</main>
+
+<footer>
+
+    © 2026 Jidoor Konveksi
+
+</footer>
+
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/media-sync.js"></script>
+
+<script>
+
+const checkoutData =
+    JSON.parse(
+        localStorage.getItem(
+            "checkoutData"
+        )
+    );
+
+if (!checkoutData) {
+
+    alert(
+        "Data pembayaran tidak ditemukan."
+    );
+
+    window.location.href =
+        "keranjang.html";
+
+}
+
+function tampilkanPembayaran() {
+
+    const container =
+        document.getElementById(
+            "paymentContent"
+        );
+
+    container.innerHTML = `
+
+        <div class="payment-grid">
+
+            <div class="payment-summary">
+
+                <h2>
+                    Ringkasan Pesanan
+                </h2>
+
+                <div class="payment-order-number">
+
+                    <span>
+                        No. Pesanan
+                    </span>
+
+                    <strong>
+                        #${checkoutData.id}
+                    </strong>
+
+                </div>
+
+                <div class="payment-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong>
+                        Rp ${checkoutData.subtotal.toLocaleString("id-ID")}
+                    </strong>
+
+                </div>
+
+                <div class="payment-row">
+
+                    <span>
+                        Ongkir
+                    </span>
+
+                    <strong>
+                        ${
+                            checkoutData.ongkir === 0
+                            ? "Gratis"
+                            : "Rp " +
+                              checkoutData.ongkir.toLocaleString("id-ID")
+                        }
+                    </strong>
+
+                </div>
+
+                <div class="payment-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong>
+                        Rp ${checkoutData.total.toLocaleString("id-ID")}
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="payment-box">
+
+                <h2>
+                    ${checkoutData.metodePembayaran}
+                </h2>
+
+                <div id="paymentMethodContent">
+
+                </div>
+
+                <button
+                    id="paymentSubmitButton"
+                    type="button"
+                    onclick="konfirmasiPembayaran()"
+                    class="payment-button">
+
+                    Kirim Bukti Pembayaran
+
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+
+    tampilkanMetode();
+
+}
+
+function tampilkanMetode() {
+
+    const content =
+        document.getElementById(
+            "paymentMethodContent"
+        );
+
+    if (
+        checkoutData.metodePembayaran
+        === "Transfer Bank"
+    ) {
+
+        content.innerHTML = `
+
+            <div class="bank-info">
+
+                <p>
+                    Silakan lakukan simulasi
+                    transfer ke rekening berikut.
+                </p>
+
+                <div class="bank-card">
+
+                    <strong>
+                        BCA
+                    </strong>
+
+                    <span>
+                        Jidoor Konveksi
+                    </span>
+
+                    <b>
+                        1234567890
+                    </b>
+
+                </div>
+
+                <div class="payment-proof">
+                    <label for="buktiPembayaran">
+                        Upload Bukti Pembayaran
+                    </label>
+
+                    <input
+                        type="file"
+                        id="buktiPembayaran"
+                        accept="image/png,image/jpeg,image/webp">
+
+                    <small id="buktiPembayaranName">
+                        Format JPG, PNG, atau WEBP.
+                    </small>
+                </div>
+
+            </div>
+
+        `;
+
+    } else if (
+        checkoutData.metodePembayaran
+        === "E-Wallet"
+    ) {
+
+        content.innerHTML = `
+
+            <div class="wallet-info">
+
+                <p>
+                    Pilih e-wallet yang akan digunakan.
+                </p>
+
+                <select
+                    id="walletSelect"
+                    class="wallet-select"
+                    onchange="tampilkanNomorWallet()">
+
+                    <option value="">
+                        Pilih E-Wallet
+                    </option>
+
+                    <option value="DANA">
+                        DANA
+                    </option>
+
+                    <option value="GoPay">
+                        GoPay
+                    </option>
+
+                    <option value="OVO">
+                        OVO
+                    </option>
+
+                </select>
+
+                <div
+                    id="walletNumber"
+                    class="wallet-number"
+                    hidden>
+                </div>
+
+                <div class="payment-proof">
+                    <label for="buktiPembayaran">
+                        Upload Bukti Pembayaran
+                    </label>
+
+                    <input
+                        type="file"
+                        id="buktiPembayaran"
+                        accept="image/png,image/jpeg,image/webp">
+
+                    <small id="buktiPembayaranName">
+                        Format JPG, PNG, atau WEBP.
+                    </small>
+                </div>
+
+            </div>
+
+        `;
+
+    } else if (
+        checkoutData.metodePembayaran
+        === "COD"
+    ) {
+
+        content.innerHTML = `
+
+            <div class="cod-info">
+
+                <p>
+                    Pembayaran dilakukan saat pesanan
+                    diterima.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+function tampilkanNomorWallet() {
+
+    const wallet =
+        document.getElementById(
+            "walletSelect"
+        );
+
+    const numberBox =
+        document.getElementById(
+            "walletNumber"
+        );
+
+    if (!wallet || !numberBox) {
+        return;
+    }
+
+    const nomor = {
+        DANA: "0812 3456 7890",
+        GoPay: "0812 3456 7890",
+        OVO: "0812 3456 7890"
+    };
+
+    if (!wallet.value) {
+
+        numberBox.hidden = true;
+        numberBox.innerHTML = "";
+
+        return;
+    }
+
+    numberBox.hidden = false;
+
+    numberBox.innerHTML = `
+        <span>Nomor ${wallet.value}</span>
+        <strong>${nomor[wallet.value]}</strong>
+    `;
+
+}
+
+function bacaBuktiPembayaran(file) {
+
+    return new Promise(function (resolve, reject) {
+
+        if (!file) {
+            resolve(null);
+            return;
+        }
+
+        if (!file.type.startsWith("image/")) {
+            reject(
+                new Error(
+                    "Bukti pembayaran harus berupa gambar."
+                )
+            );
+            return;
+        }
+
+        if (file.size > 5 * 1024 * 1024) {
+            reject(
+                new Error(
+                    "Ukuran bukti pembayaran maksimal 5 MB."
+                )
+            );
+            return;
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = function () {
+            resolve({
+                nama: file.name,
+                tipe: file.type,
+                ukuran: file.size,
+                data: reader.result
+            });
+        };
+
+        reader.onerror = function () {
+            reject(
+                new Error(
+                    "Bukti pembayaran tidak dapat dibaca."
+                )
+            );
+        };
+
+        reader.readAsDataURL(file);
+    });
+}
+
+function simpanPesanan(order) {
+
+    let riwayat = [];
+
+    try {
+        riwayat =
+            JSON.parse(
+                localStorage.getItem(
+                    "riwayatPesanan"
+                ) || "[]"
+            );
+    } catch (error) {
+        riwayat = [];
+    }
+
+    if (!Array.isArray(riwayat)) {
+        riwayat = [];
+    }
+
+    const index =
+        riwayat.findIndex(function (item) {
+            return String(item.id) === String(order.id);
+        });
+
+    if (index >= 0) {
+        riwayat[index] = order;
+    } else {
+        riwayat.unshift(order);
+    }
+
+    localStorage.setItem(
+        "riwayatPesanan",
+        JSON.stringify(riwayat)
+    );
+
+    localStorage.setItem(
+        "pesananTerakhir",
+        JSON.stringify(order)
+    );
+}
+
+async function konfirmasiPembayaran() {
+
+    const button =
+        document.getElementById(
+            "paymentSubmitButton"
+        );
+
+    if (button) {
+        button.disabled = true;
+    }
+
+    try {
+
+        const metode =
+            checkoutData.metodePembayaran;
+
+        let statusPembayaran =
+            "Menunggu Pembayaran";
+
+        let statusPesanan =
+            "Menunggu Pembayaran";
+
+        if (metode === "COD") {
+
+            statusPembayaran =
+                "Belum Dibayar";
+
+            statusPesanan =
+                "Diproses";
+
+        } else {
+
+            const bukti =
+                document.getElementById(
+                    "buktiPembayaran"
+                );
+
+            if (
+                !bukti ||
+                !bukti.files ||
+                !bukti.files.length
+            ) {
+                alert(
+                    "Silakan upload bukti pembayaran terlebih dahulu."
+                );
+
+                return;
+            }
+
+            const dataBukti =
+                await bacaBuktiPembayaran(
+                    bukti.files[0]
+                );
+
+            checkoutData.buktiPembayaran =
+                dataBukti;
+
+            statusPembayaran =
+                "Menunggu Verifikasi";
+
+            statusPesanan =
+                "Menunggu Pembayaran";
+        }
+
+        checkoutData.statusPembayaran =
+            statusPembayaran;
+
+        checkoutData.statusPesanan =
+            statusPesanan;
+
+        checkoutData.waktu =
+            checkoutData.waktu ||
+            new Date().toLocaleTimeString(
+                "id-ID",
+                {
+                    hour: "2-digit",
+                    minute: "2-digit"
+                }
+            );
+
+        simpanPesanan(checkoutData);
+
+        localStorage.removeItem(
+            "checkoutData"
+        );
+
+        localStorage.removeItem(
+            "keranjang"
+        );
+
+        window.location.href =
+            "pembayaran-berhasil.html";
+
+    } catch (error) {
+
+        alert(
+            error.message ||
+            "Bukti pembayaran tidak dapat diproses."
+        );
+
+    } finally {
+
+        if (button) {
+            button.disabled = false;
+        }
+
+    }
+}
+
+tampilkanPembayaran();
+
+document.addEventListener(
+    "change",
+    function (event) {
+        if (
+            event.target.id !==
+            "buktiPembayaran"
+        ) {
+            return;
+        }
+
+        const name =
+            document.getElementById(
+                "buktiPembayaranName"
+            );
+
+        if (!name) {
+            return;
+        }
+
+        name.textContent =
+            event.target.files.length
+                ? event.target.files[0].name
+                : "Format JPG, PNG, atau WEBP.";
+    }
+);
+
+</script>
+
+</div>
+
+</body>
+
+</html>

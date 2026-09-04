@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jidoor Konveksi</title>
+<link href="assets/css/global.css" rel="stylesheet"/>
+<link href="assets/css/navbar.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/uniform.css" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/mobile-responsive.css">
+</head>
+<body>
+<div class="page-wrapper">
+<div class="navbar">
+<div class="nav-container">
+<div class="logo">
+<img alt="Jidoor Konveksi" src="assets/img/JIDOOR LOGO.png"/>
+</div>
+<div class="menu">
+<a class="nav-link" href="index.html">Beranda</a>
+<a class="nav-link" href="lihat-produk.html">Produk</a>
+<a class="nav-link" href="keranjang.html">Keranjang
+        <span class="cart-badge" id="cartBadge">0</span>
+</a>
+<a class="nav-link" href="kontak.html">Kontak</a>
+</div>
+<div class="nav-right">
+<div class="search-box">
+<input id="searchNavbar" placeholder="Cari produk..." type="text"/>
+<i class="bi bi-search"></i>
+</div>
+<div id="authArea">
+<a class="btn-login" href="login.html">
+
+            Masuk
+
+        </a>
+</div>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="keranjang-container">
+<div class="keranjang-card-left">
+<h2 class="title">Pesanan Kamu</h2>
+<label style="font-size:14px;">
+<input onclick="pilihSemua(this)" type="checkbox"/>
+    Pilih Semua
+  </label>
+<div class="cart-wrapper"></div>
+<div id="listKeranjang"></div>
+</div>
+<div class="keranjang-right-box">
+<h3 id="totalHarga">Total: Rp 0</h3>
+<p class="cart-info-right">0 item dipilih</p>
+<hr/>
+<div class="cart-summary">
+<p>Subtotal</p>
+<span id="subtotalHarga">Rp 0</span>
+</div>
+<div class="cart-summary">
+<p>Ongkir</p>
+<span>Rp 0</span>
+</div>
+<div class="cart-summary total-final">
+<p>Total</p>
+<span id="totalFinal">Rp 0</span>
+</div>
+<button class="btn-checkout" onclick="checkout()">Checkout</button>
+</div>
+</div>
+</div>
+<footer>
+    © 2026 Jidoor Konveksi
+  </footer>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/media-sync.js"></script>
+<script src="assets/js/product-images.js?v=20260830-v3"></script>
+</div></body>
+<script>
+
+let keranjang =
+    JSON.parse(localStorage.getItem("keranjang")) || [];
+
+function parseHarga(value) {
+    return Number(
+        String(value || "").replace(/[^0-9]/g, "")
+    ) || 0;
+}
+
+function getVariants(item) {
+
+    if (Array.isArray(item.variants) && item.variants.length) {
+        return item.variants;
+    }
+
+    return [{
+        ukuran: item.ukuran || "-",
+        lengan: item.lengan || "-",
+        jumlah: Number(item.jumlah) || 1
+    }];
+}
+
+function getJumlah(item) {
+    return getVariants(item).reduce(
+        function (total, variant) {
+            return total + (Number(variant.jumlah) || 0);
+        },
+        0
+    );
+}
+
+function renderKeranjang() {
+
+    const container =
+        document.getElementById("listKeranjang");
+
+    if (!keranjang.length) {
+
+        container.innerHTML = `
+            <div class="cart-empty">
+                <h3>Keranjang masih kosong</h3>
+                <p>Silakan pilih produk terlebih dahulu.</p>
+                <a href="lihat-produk.html">Lihat Produk</a>
+            </div>
+        `;
+
+        updateTotal();
+        return;
+    }
+
+    container.innerHTML =
+        keranjang.map(function (item, index) {
+
+            const harga = parseHarga(item.harga);
+            const variants = getVariants(item);
+            const jumlah = getJumlah(item);
+            const subtotal = harga * jumlah;
+
+            const variantsHTML =
+                variants.map(function (variant) {
+                    return `
+                        <span>
+                            ${variant.ukuran || "-"}
+                            · ${variant.lengan || "-"}
+                            × ${Number(variant.jumlah) || 0}
+                        </span>
+                    `;
+                }).join("");
+
+            return `
+                <div class="cart-item">
+
+                    <input
+                        type="checkbox"
+                        class="check-item"
+                        checked
+                        onchange="updateTotal()">
+
+                    <img
+                        src="${jidoorProductImages.resolve(item)}"
+                        class="cart-img"
+                        alt="${item.produk || "Produk"}">
+
+                    <div class="cart-info">
+
+                        <h3>${item.produk || "Produk"}</h3>
+
+                        <p>
+                            ${item.bahan || "-"}
+                            ${item.warna ? " | " + item.warna : ""}
+                        </p>
+
+                        ${
+                            item.kerah && item.kerah !== "-"
+                                ? `<p>Kerah: ${item.kerah}</p>`
+                                : ""
+                        }
+
+                        <div class="cart-variant-list">
+                            ${variantsHTML}
+                        </div>
+
+                        ${
+                            item.isCustom && item.desain
+                                ? `<p class="cart-custom-design">
+                                    <i class="bi bi-palette"></i>
+                                    Desain custom · ${Number(item.desain.elements?.length || 0)} elemen
+                                </p>`
+                                : ""
+                        }
+
+                    </div>
+
+                    <div class="cart-price">
+                        Rp ${harga.toLocaleString("id-ID")}
+                    </div>
+
+                    <div class="cart-qty">
+                        ${jumlah} pcs
+                    </div>
+
+                    <div class="cart-subtotal" id="subtotal-${index}">
+                        Rp ${subtotal.toLocaleString("id-ID")}
+                    </div>
+
+                    <button
+                        onclick="hapusItem(${index})"
+                        class="btn-delete"
+                        type="button">
+                        🗑
+                    </button>
+
+                </div>
+            `;
+        }).join("");
+
+    updateTotal();
+}
+
+function hapusItem(index) {
+
+    keranjang.splice(index, 1);
+
+    localStorage.setItem(
+        "keranjang",
+        JSON.stringify(keranjang)
+    );
+
+    renderKeranjang();
+}
+
+function updateTotal() {
+
+    const checkboxes =
+        document.querySelectorAll(".check-item");
+
+    let total = 0;
+    let jumlahProduk = 0;
+
+    checkboxes.forEach(function (checkbox, index) {
+
+        if (!checkbox.checked) {
+            return;
+        }
+
+        const item = keranjang[index];
+        const harga = parseHarga(item.harga);
+        const jumlah = getJumlah(item);
+
+        total += harga * jumlah;
+        jumlahProduk += jumlah;
+    });
+
+    const totalHarga =
+        document.getElementById("totalHarga");
+
+    const subtotalHarga =
+        document.getElementById("subtotalHarga");
+
+    const totalFinal =
+        document.getElementById("totalFinal");
+
+    if (totalHarga) {
+        totalHarga.innerText =
+            "Total: Rp " +
+            total.toLocaleString("id-ID");
+    }
+
+    if (subtotalHarga) {
+        subtotalHarga.innerText =
+            "Rp " +
+            total.toLocaleString("id-ID");
+    }
+
+    const ongkir =
+        total > 0 && total < 200000 ? 10000 : 0;
+
+    const ongkirElement =
+        document.querySelectorAll(".cart-summary span")[1];
+
+    if (ongkirElement) {
+        ongkirElement.innerText =
+            "Rp " +
+            ongkir.toLocaleString("id-ID");
+    }
+
+    if (totalFinal) {
+        totalFinal.innerText =
+            "Rp " +
+            (total + ongkir).toLocaleString("id-ID");
+    }
+
+    const info =
+        document.querySelector(".cart-info-right");
+
+    if (info) {
+        info.innerText =
+            jumlahProduk + " pcs dipilih";
+    }
+}
+
+function pilihSemua(source) {
+
+    document.querySelectorAll(".check-item")
+        .forEach(function (checkbox) {
+            checkbox.checked = source.checked;
+        });
+
+    updateTotal();
+}
+
+function checkout() {
+
+    const selected =
+        Array.from(
+            document.querySelectorAll(".check-item")
+        )
+        .map(function (checkbox, index) {
+            return checkbox.checked
+                ? keranjang[index]
+                : null;
+        })
+        .filter(Boolean);
+
+    if (!selected.length) {
+        alert("Pilih minimal satu produk.");
+        return;
+    }
+
+    localStorage.setItem(
+        "keranjangCheckout",
+        JSON.stringify(selected)
+    );
+
+    window.location.href = "checkout.html";
+}
+
+renderKeranjang();
+
+</script>
+</html>

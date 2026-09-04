@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Profil Saya | Jidoor Konveksi</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link
+        rel="stylesheet"
+        href="assets/css/profile.css">
+
+<link rel="stylesheet" href="assets/css/global.css">
+
+<link rel="stylesheet" href="assets/css/navbar.css">
+
+<link rel="stylesheet" href="assets/css/home.css">
+
+<link rel="stylesheet" href="assets/css/auth.css">
+
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/uniform.css">
+<link rel="stylesheet" href="assets/css/mobile-responsive.css">
+</head>
+
+<body class="profile-page">
+
+<header class="profile-navbar">
+
+    <div class="profile-nav-container">
+
+        <a
+            href="index.html"
+            class="profile-brand">
+
+            <img
+                src="assets/img/JIDOOR LOGO.png"
+                alt="Jidoor Konveksi">
+
+        </a>
+
+        <nav class="profile-nav-menu">
+
+            <a href="index.html">
+                Beranda
+            </a>
+
+            <a href="lihat-produk.html">
+                Produk
+            </a>
+            <a href="keranjang.html">
+                Keranjang
+                <span
+                    id="cartBadge"
+                    class="cart-badge">
+                    0
+                </span>
+            </a>
+
+            <a href="kontak.html">
+                Kontak
+            </a>
+
+        </nav>
+
+        <div class="profile-nav-user">
+
+            <button
+                type="button"
+                class="profile-user-button">
+
+                <i class="bi bi-person-circle"></i>
+
+                <span id="navbarUserName">
+                    Pengguna
+                </span>
+
+                <i class="bi bi-chevron-down"></i>
+
+            </button>
+
+            <div class="profile-user-dropdown">
+
+                <a href="profile.html">
+
+                    <i class="bi bi-person"></i>
+
+                    <span>
+                        Profil Saya
+                    </span>
+
+                </a>
+
+                <a href="riwayat.html">
+
+                    <i class="bi bi-clock-history"></i>
+
+                    <span>
+                        Riwayat Pesanan
+                    </span>
+
+                </a>
+
+                <button
+                    type="button"
+                    id="logoutButton">
+
+                    <i class="bi bi-box-arrow-right"></i>
+
+                    <span>
+                        Logout
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<main class="profile-main">
+
+    <section class="profile-heading">
+
+        <span class="profile-eyebrow">
+            AKUN SAYA
+        </span>
+
+        <h1>
+
+            Halo,
+            <span id="welcomeName">
+                Pengguna
+            </span>!
+
+        </h1>
+
+        <p>
+            Kelola informasi pribadi dan akun Jidoor Konveksi Anda.
+        </p>
+
+    </section>
+
+    <section class="profile-card">
+
+        <aside class="profile-sidebar">
+
+            <div class="profile-logo">
+
+                <img
+                    src="assets/img/JIDOOR LOGO.png"
+                    alt="Jidoor Konveksi">
+
+            </div>
+
+            <h2 id="profileUserName">
+                Pengguna
+            </h2>
+
+            <p
+                id="profileUserEmail"
+                class="profile-email">
+
+                email@contoh.com
+
+            </p>
+
+            <span
+                id="profileUserRole"
+                class="profile-role">
+
+                Pelanggan
+
+            </span>
+
+            <div class="profile-sidebar-info">
+
+                <div>
+
+                    <i class="bi bi-shield-check"></i>
+
+                    <span>
+                        Akun Terdaftar
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <i class="bi bi-person-check"></i>
+
+                    <span>
+                        Data Pribadi
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                id="sidebarLogout"
+                class="sidebar-logout">
+
+                <i class="bi bi-box-arrow-right"></i>
+
+                Keluar dari akun
+
+            </button>
+
+        </aside>
+
+        <div class="profile-content">
+
+            <div class="content-heading">
+
+                <span>
+                    DATA AKUN
+                </span>
+
+                <h2>
+                    Informasi Pribadi
+                </h2>
+
+                <p>
+                    Pastikan informasi yang Anda masukkan sudah benar.
+                </p>
+
+            </div>
+
+            <form
+                id="profileForm"
+                class="profile-form">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="profileName">
+
+                            Nama Lengkap
+
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="bi bi-person"></i>
+
+                            <input
+                                type="text"
+                                id="profileName"
+                                name="name"
+                                placeholder="Masukkan nama lengkap"
+                                required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="profileEmail">
+
+                            Alamat Email
+
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="bi bi-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="profileEmail"
+                                name="email"
+                                placeholder="Masukkan alamat email"
+                                required>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="profilePhone">
+
+                            Nomor WhatsApp
+
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="bi bi-whatsapp"></i>
+
+                            <input
+                                type="tel"
+                                id="profilePhone"
+                                name="phone"
+                                placeholder="08xxxxxxxxxx">
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="profileCity">
+
+                            Kota
+
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="bi bi-geo-alt"></i>
+
+                            <input
+                                type="text"
+                                id="profileCity"
+                                name="city"
+                                placeholder="Masukkan kota">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="profile-info-box">
+
+                    <div class="info-icon">
+
+                        <i class="bi bi-info-circle"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Informasi akun
+                        </strong>
+
+                        <p>
+                            Nama dan email digunakan sebagai informasi utama akun Anda.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="profile-submit">
+
+                    <span>
+                        Simpan Perubahan
+                    </span>
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="profile-footer">
+
+    <p>
+        © 2026 Jidoor Konveksi
+    </p>
+
+</footer>
+
+<div
+    id="profileToast"
+    class="profile-toast">
+
+    <i class="bi bi-check-circle-fill"></i>
+
+    <span id="toastMessage">
+        Perubahan berhasil disimpan.
+    </span>
+
+</div>
+
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/media-sync.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const loginUser =
+        JSON.parse(
+            localStorage.getItem("loginUser")
+        );
+
+    if (!loginUser) {
+
+        window.location.href = "login.html";
+
+        return;
+
+    }
+
+    const nama =
+        loginUser.nama || "Pengguna";
+
+    const email =
+        loginUser.email || "email@contoh.com";
+
+    const role =
+        loginUser.role === "admin"
+            ? "Administrator"
+            : "Pelanggan";
+
+    document.getElementById(
+        "welcomeName"
+    ).textContent = nama;
+
+    document.getElementById(
+        "profileUserName"
+    ).textContent = nama;
+
+    document.getElementById(
+        "profileUserEmail"
+    ).textContent = email;
+
+    document.getElementById(
+        "profileUserRole"
+    ).textContent = role;
+
+    document.getElementById(
+        "navbarUserName"
+    ).textContent = nama;
+
+    document.getElementById(
+        "profileName"
+    ).value =
+        loginUser.nama || "";
+
+    document.getElementById(
+        "profileEmail"
+    ).value =
+        loginUser.email || "";
+
+    document.getElementById(
+        "profilePhone"
+    ).value =
+        loginUser.phone || "";
+
+    document.getElementById(
+        "profileCity"
+    ).value =
+        loginUser.city || "";
+
+    document.getElementById(
+        "profileForm"
+    ).addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+
+            const updatedUser = {
+
+                ...loginUser,
+
+                nama:
+                    document.getElementById(
+                        "profileName"
+                    ).value.trim(),
+
+                email:
+                    document.getElementById(
+                        "profileEmail"
+                    ).value.trim(),
+
+                phone:
+                    document.getElementById(
+                        "profilePhone"
+                    ).value.trim(),
+
+                city:
+                    document.getElementById(
+                        "profileCity"
+                    ).value.trim()
+
+            };
+
+            localStorage.setItem(
+                "loginUser",
+                JSON.stringify(updatedUser)
+            );
+
+            document.getElementById(
+                "welcomeName"
+            ).textContent =
+                updatedUser.nama;
+
+            document.getElementById(
+                "profileUserName"
+            ).textContent =
+                updatedUser.nama;
+
+            document.getElementById(
+                "profileUserEmail"
+            ).textContent =
+                updatedUser.email;
+
+            document.getElementById(
+                "navbarUserName"
+            ).textContent =
+                updatedUser.nama;
+
+            showProfileToast(
+                "Perubahan berhasil disimpan."
+            );
+
+        }
+    );
+
+    function doLogout() {
+
+        localStorage.removeItem(
+            "loginUser"
+        );
+
+        window.location.href =
+            "login.html";
+
+    }
+
+    document.getElementById(
+        "logoutButton"
+    ).addEventListener(
+        "click",
+        doLogout
+    );
+
+    document.getElementById(
+        "sidebarLogout"
+    ).addEventListener(
+        "click",
+        doLogout
+    );
+
+    const cartBadge =
+        document.getElementById(
+            "cartBadge"
+        );
+
+    const cart =
+        JSON.parse(
+            localStorage.getItem("keranjang")
+        ) || [];
+
+    let totalCart = 0;
+
+    cart.forEach(function (item) {
+
+        totalCart +=
+            Number(item.jumlah) || 0;
+
+    });
+
+    if (totalCart > 0) {
+
+        cartBadge.textContent =
+            totalCart;
+
+        cartBadge.style.display =
+            "inline-flex";
+
+    } else {
+
+        cartBadge.style.display =
+            "none";
+
+    }
+
+});
+
+function showProfileToast(message) {
+
+    const toast =
+        document.getElementById(
+            "profileToast"
+        );
+
+    const toastMessage =
+        document.getElementById(
+            "toastMessage"
+        );
+
+    toastMessage.textContent =
+        message;
+
+    toast.classList.add("show");
+
+    setTimeout(function () {
+
+        toast.classList.remove("show");
+
+    }, 3000);
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>

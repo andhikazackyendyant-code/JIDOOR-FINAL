@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media & Konten | Jidoor Konveksi</title>
+<link rel="stylesheet" href="../assets/css/global.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="../assets/css/mobile-responsive.css">
+</head>
+<body>
+<div class="admin-shell">
+<aside class="admin-sidebar" id="adminSidebar">
+<a href="dashboard.html" class="admin-brand"><img src="../assets/img/JIDOOR LOGO.png" alt="Jidoor"><div><strong>JIDOOR</strong><span>ADMIN PANEL</span></div></a>
+<nav class="admin-nav">
+<a href="dashboard.html"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a>
+<a href="pesanan.html"><i class="bi bi-receipt"></i><span>Pesanan</span></a>
+<a href="produk.html"><i class="bi bi-box-seam"></i><span>Produk</span></a>
+<a href="design-studio.html"><i class="bi bi-palette"></i><span>Design Studio</span></a>
+<a href="media.html" class="active"><i class="bi bi-images"></i><span>Media & Konten</span></a>
+<a href="carousel.html"><i class="bi bi-arrow-repeat"></i><span>Carousel</span></a>
+<a href="pelanggan.html"><i class="bi bi-people"></i><span>Pelanggan</span></a>
+<a href="pengaturan.html"><i class="bi bi-gear"></i><span>Pengaturan</span></a>
+</nav>
+<div class="admin-sidebar-bottom"><button class="admin-logout" type="button" onclick="adminLogout()"><i class="bi bi-box-arrow-left"></i><span>Logout</span></button></div>
+</aside>
+
+<main class="admin-main">
+<header class="admin-topbar">
+<button class="admin-mobile" id="menuButton" type="button"><i class="bi bi-list"></i></button>
+<div><h1>Media & Konten</h1><p>Kelola aset visual dan konten yang menjadi sumber website.</p></div>
+<div class="admin-user"><div class="admin-user-avatar"><i class="bi bi-person-fill"></i></div><div class="admin-user-text"><strong data-admin-name>Admin</strong><span>Administrator</span></div></div>
+</header>
+
+<section class="admin-content">
+<div class="page-toolbar"><div><h2>Media Website</h2><p>Unggah aset dari sini. Tidak perlu mengubah file HTML secara manual.</p></div></div>
+
+<section class="form-card">
+<div class="card-heading"><h2 class="section-title-admin">Aset Utama Website</h2><span id="mediaCount" class="product-count">0 aset</span></div>
+<div id="mediaGrid" class="media-control-grid"></div>
+</section>
+
+<form id="contentForm">
+<section class="form-card content-section-admin">
+<h2 class="section-title-admin">Konten Beranda</h2>
+<div class="form-grid">
+<div class="form-group"><label for="siteName">Nama Website</label><input id="siteName"></div>
+<div class="form-group"><label for="homeTitle">Judul Hero</label><input id="homeTitle" placeholder="Custom Apparel Berkualitas untuk Semua Kebutuhan"></div>
+<div class="form-group full"><label for="homeSubtitle">Subjudul Hero</label><textarea id="homeSubtitle" placeholder="Deskripsi singkat pada hero beranda"></textarea></div>
+<div class="form-group"><label for="productTitle">Judul Produk</label><input id="productTitle" placeholder="Produk Kami"></div>
+<div class="form-group"><label for="productSubtitle">Subjudul Produk</label><input id="productSubtitle" placeholder="Pilih jenis apparel sesuai kebutuhan kamu"></div>
+<div class="form-group"><label for="buttonOrder">Teks Tombol Pesan</label><input id="buttonOrder" placeholder="Pesan Sekarang"></div>
+<div class="form-group"><label for="buttonDesign">Teks Tombol Desain</label><input id="buttonDesign" placeholder="Buat Desain"></div>
+</div>
+</section>
+
+<section class="form-card content-section-admin">
+<h2 class="section-title-admin">Kontak Website</h2>
+<div class="form-grid">
+<div class="form-group"><label for="whatsapp">WhatsApp</label><input id="whatsapp" placeholder="628xxxxxxxxxx"></div>
+<div class="form-group"><label for="email">Email</label><input id="email" type="email"></div>
+<div class="form-group full"><label for="address">Alamat</label><textarea id="address"></textarea></div>
+<div class="form-group"><label for="instagram">Instagram</label><input id="instagram" placeholder="@jidoorkonveksi"></div>
+<div class="form-group"><label for="tiktok">TikTok</label><input id="tiktok" placeholder="@jidoorkonveksi"></div>
+</div>
+</section>
+
+<div class="admin-save-row">
+<button class="btn-admin btn-secondary" id="resetContent" type="button">Kembalikan Default</button>
+<button class="btn-admin btn-primary" type="submit"><i class="bi bi-check2"></i> Simpan Semua Konten</button>
+</div>
+</form>
+</section>
+</main>
+</div>
+<script src="../assets/js/admin.js"></script>
+<script src="../assets/js/admin-media.js"></script>
+</body>
+</html>

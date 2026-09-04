@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Riwayat Pesanan | Jidoor Konveksi</title>
+
+    <link
+        rel="stylesheet"
+        href="assets/css/global.css">
+
+    <link
+        rel="stylesheet"
+        href="assets/css/navbar.css">
+
+    <link
+        rel="stylesheet"
+        href="assets/css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/uniform.css">
+<link rel="stylesheet" href="assets/css/mobile-responsive.css">
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+    <div class="navbar">
+
+        <div class="nav-container">
+
+            <a
+                href="index.html"
+                class="logo">
+
+                <img
+                    src="assets/img/JIDOOR LOGO.png"
+                    alt="Jidoor Konveksi">
+
+            </a>
+
+            <div class="menu">
+    <a href="index.html" class="nav-link">Beranda</a>
+    <a href="lihat-produk.html" class="nav-link">Produk</a>
+    <a href="keranjang.html" class="nav-link">Keranjang
+    <span id="cartBadge" class="cart-badge">0</span>
+    </a>
+    <a href="kontak.html" class="nav-link">Kontak</a>
+
+            </div>
+
+            <div class="nav-right">
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchNavbar"
+                        placeholder="Cari produk...">
+
+                    <i class="bi bi-search"></i>
+
+                </div>
+
+                <div id="authArea">
+
+                    <a
+                        href="login.html"
+                        class="btn-login">
+
+                        Masuk
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <main class="riwayat-page">
+
+        <div class="riwayat-header">
+
+            <span class="riwayat-eyebrow">
+                PESANAN
+            </span>
+
+            <h1>
+                Riwayat Pesanan
+            </h1>
+
+            <p>
+                Lihat seluruh pesanan yang pernah Anda lakukan.
+            </p>
+
+        </div>
+
+        <div id="riwayatList">
+
+        </div>
+
+    </main>
+
+    <footer>
+
+        © 2026 Jidoor Konveksi
+
+    </footer>
+
+    <script src="assets/js/auth.js"></script>
+<script src="assets/js/media-sync.js"></script>
+<script src="assets/js/product-images.js?v=20260830-v3"></script>
+
+    <script>
+
+    function tampilkanRiwayat() {
+
+        const container =
+            document.getElementById(
+                "riwayatList"
+            );
+
+        const riwayat =
+            JSON.parse(
+                localStorage.getItem(
+                    "riwayatPesanan"
+                )
+            ) || [];
+
+        if (riwayat.length === 0) {
+
+            container.innerHTML = `
+
+                <div class="riwayat-empty">
+
+                    <i class="bi bi-receipt"></i>
+
+                    <h3>
+                        Belum Ada Pesanan
+                    </h3>
+
+                    <p>
+                        Anda belum memiliki
+                        riwayat pesanan.
+                    </p>
+
+                    <a
+                        href="lihat-produk.html"
+                        class="riwayat-btn">
+
+                        Lihat Produk
+
+                    </a>
+
+                </div>
+
+            `;
+
+            return;
+        }
+
+        container.innerHTML =
+            riwayat.map(
+                pesanan => {
+
+                const produkUtama =
+                    pesanan.produk?.[0];
+
+                const jumlahProduk =
+                    pesanan.produk
+                        ?.reduce(
+                            (total, item) =>
+                                total +
+                                Number(item.jumlah || 1),
+                            0
+                        ) || 0;
+
+                return `
+
+                <div class="riwayat-card">
+
+                    <div class="riwayat-card-top">
+
+                        <div>
+
+                            <span
+                                class="riwayat-order-label">
+
+                                No. Pesanan
+
+                            </span>
+
+                            <strong>
+
+                                #${pesanan.id}
+
+                            </strong>
+
+                            <small>
+
+                                ${pesanan.tanggal}
+                                •
+                                ${pesanan.waktu}
+
+                            </small>
+
+                        </div>
+
+                        <span
+                            class="status-pesanan">
+
+                            ${pesanan.statusPesanan || pesanan.status || "Diproses"}
+
+                        </span>
+
+                    </div>
+
+                    <div class="riwayat-product">
+
+                        <img
+                            src="${jidoorProductImages.resolve(produkUtama)}"
+                            alt="${produkUtama?.produk || "Produk"}">
+
+                        <div class="riwayat-product-info">
+
+                            <h3>
+
+                                ${produkUtama?.produk || "Pesanan"}
+
+                            </h3>
+
+                            <p>
+
+                                ${jumlahProduk}
+                                item
+
+                                ${pesanan.produk.length > 1
+                                    ? `+ ${pesanan.produk.length - 1} produk lainnya`
+                                    : ""}
+
+                            </p>
+
+                            <strong>
+
+                                Rp ${pesanan.total.toLocaleString("id-ID")}
+
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <div class="riwayat-card-bottom">
+
+                        <div class="riwayat-total">
+
+                            <span>
+                                Total Pesanan
+                            </span>
+
+                            <strong>
+                                Rp ${Number(pesanan.total || 0).toLocaleString("id-ID")}
+                            </strong>
+
+                        </div>
+
+                        <a
+                            href="detail-pesanan.html?id=${encodeURIComponent(pesanan.id || "")}"
+                            class="riwayat-detail-btn">
+
+                            Lihat Detail
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                `;
+
+            }).join("");
+
+    }
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        tampilkanRiwayat
+    );
+
+    </script>
+
+</div>
+
+</body>
+
+</html>

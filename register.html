@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daftar | Jidoor Konveksi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="assets/css/auth-register.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/uniform.css">
+<link rel="stylesheet" href="assets/css/mobile-responsive.css">
+</head>
+<body class="auth-page">
+    <main class="auth-shell register-shell">
+        <section class="brand-panel">
+            <a class="brand" href="index.html">
+                <img src="assets/img/logo.png" alt="Jidoor Konveksi" class="brand-logo">
+            </a>
+            <div class="brand-copy">
+                <p class="eyebrow">MULAI PERJALANAN ANDA</p>
+                <h1>Semua kebutuhan konveksi, dalam satu akun.</h1>
+                <p>Simpan pesanan, pantau proses produksi, dan dapatkan penawaran terbaik dari Jidoor.</p>
+            </div>
+            <div class="brand-stats">
+                <span><strong>Aman</strong>data terlindungi</span>
+                <span><strong>Mudah</strong>pantau pesanan</span>
+            </div>
+        </section>
+        <section class="form-panel">
+            <div class="form-wrap">
+                <a class="mobile-brand" href="index.html">
+                    <img src="assets/img/logo.png" alt="Jidoor Konveksi" class="brand-logo">
+                </a>
+                <p class="eyebrow">BUAT AKUN BARU</p>
+                <h2>Bergabung dengan Jidoor</h2>
+                <p class="form-intro">Isi data berikut untuk membuat akun pelanggan.</p>
+                <form id="registerForm" novalidate>
+
+    <div class="form-group">
+
+        <label for="registerName">
+            Nama lengkap
+        </label>
+
+        <input
+            id="registerName"
+            name="name"
+            type="text"
+            autocomplete="name"
+            placeholder="Nama Anda"
+            required>
+
+        <p
+            class="field-error"
+            data-error="name">
+        </p>
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="registerEmail">
+            Alamat email
+        </label>
+
+        <input
+            id="registerEmail"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="nama@email.com"
+            required>
+
+        <p
+            class="field-error"
+            data-error="email">
+        </p>
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="registerPassword">
+            Kata sandi
+        </label>
+
+        <div class="password-wrapper">
+
+            <input
+                id="registerPassword"
+                name="password"
+                type="password"
+                autocomplete="new-password"
+                placeholder="Minimal 8 karakter"
+                required>
+
+            <button
+                class="toggle-password"
+                type="button"
+                aria-label="Tampilkan kata sandi"
+                aria-pressed="false">
+
+                👁
+
+            </button>
+
+        </div>
+
+        <p
+            class="field-error"
+            data-error="password">
+        </p>
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="confirmPassword">
+            Konfirmasi kata sandi
+        </label>
+
+        <div class="password-wrapper">
+
+            <input
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                autocomplete="new-password"
+                placeholder="Ulangi kata sandi"
+                required>
+
+            <button
+                class="toggle-password"
+                type="button"
+                aria-label="Tampilkan kata sandi"
+                aria-pressed="false">
+
+                👁
+
+            </button>
+
+        </div>
+
+        <p
+            class="field-error"
+            data-error="confirmPassword">
+        </p>
+
+    </div>
+
+    <div class="form-check">
+
+        <input
+            id="terms"
+            name="terms"
+            type="checkbox"
+            required>
+
+        <label for="terms">
+
+            Saya menyetujui
+            <a href="#">
+                Syarat & Ketentuan
+            </a>
+            Jidoor.
+
+        </label>
+
+    </div>
+
+    <p
+        class="field-error"
+        data-error="terms">
+    </p>
+
+    <button
+        class="primary-button"
+        type="submit">
+
+        Buat Akun
+
+        <span>→</span>
+
+    </button>
+
+</form>
+                <p class="auth-switch">
+    Sudah punya akun?
+    <a href="login.html">
+        Masuk di sini
+    </a>
+</p>
+</div>
+</section>
+</main>
+    <div
+        id="toastContainer"
+        class="toast-container"
+        aria-live="polite">
+    </div>
+
+    <script src="assets/js/auth.js"></script>
+<script src="assets/js/media-sync.js"></script>
+</body>
+</html>

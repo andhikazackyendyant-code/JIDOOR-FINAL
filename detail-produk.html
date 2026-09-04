@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<title>Detail Produk</title>
+<link href="assets/css/global.css" rel="stylesheet"/>
+<link href="assets/css/navbar.css" rel="stylesheet"/>
+<link href="assets/css/detail-produk.css?v=20260830-v2" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/uniform.css" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/mobile-responsive.css">
+</head>
+<body>
+<div class="navbar">
+<div class="nav-container">
+<div class="logo">
+<img alt="Jidoor Konveksi" src="assets/img/JIDOOR LOGO.png"/>
+</div>
+<div class="menu">
+<a class="nav-link" href="index.html">Beranda</a>
+<a class="nav-link" href="lihat-produk.html">
+        Produk
+    </a>
+<a class="nav-link" href="keranjang.html">
+        Keranjang
+        <span class="cart-badge" id="cartBadge">0</span>
+</a>
+<a class="nav-link" href="kontak.html">
+        Kontak
+    </a>
+</div>
+<div class="nav-right">
+<div class="search-box">
+<input id="searchNavbar" placeholder="Cari produk..." type="text"/>
+<i class="bi bi-search"></i>
+</div>
+<div id="authArea">
+<a class="btn-login" href="login.html">
+
+            Masuk
+
+        </a>
+</div>
+</div>
+</div>
+</div>
+<section class="detail-section">
+<div class="container">
+<div class="detail-wrapper">
+<div class="detail-left">
+<div class="product-image-card">
+<img alt="Produk Jidoor" class="main-image" id="gambarProduk" src="assets/img/kaos-custom-front.png"/>
+<div class="detail-gallery" id="detailGallery" aria-label="Galeri produk"></div>
+<div class="product-benefits">
+<div class="benefit-item">
+<i class="bi bi-patch-check"></i>
+<div>
+<strong>Kualitas Terjamin</strong>
+<span>Bahan pilihan dan jahitan rapi</span>
+</div>
+</div>
+<div class="benefit-item">
+<i class="bi bi-palette"></i>
+<div>
+<strong>Bisa Custom</strong>
+<span>Sesuaikan kebutuhan produk</span>
+</div>
+</div>
+<div class="benefit-item">
+<i class="bi bi-box-seam"></i>
+<div>
+<strong>Produksi Profesional</strong>
+<span>Dikerjakan dengan standar konveksi</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="detail-right">
+<div class="product-header">
+<h1 id="namaProduk">Kaos Custom</h1>
+<div class="product-price" id="harga">
+                        Rp 0
+                    </div>
+<p class="product-description">
+                        Produk custom Jidoor Konveksi dengan pilihan bahan
+                        dan ukuran yang dapat disesuaikan dengan kebutuhan.
+                    </p>
+</div>
+<div class="product-options">
+<div class="option-group">
+<label for="bahan">
+                            Bahan
+                        </label>
+<select id="bahan">
+</select>
+</div>
+
+<div class="option-group" id="kerahBox" style="display:none;">
+<label for="kerah">
+                            Model Kerah
+                        </label>
+<select id="kerah">
+<option value="O-Neck">
+                                O-Neck
+                            </option>
+<option value="V-Neck">
+                                V-Neck
+                            </option>
+<option value="Kerah Polo">
+                                Kerah Polo
+                            </option>
+<option value="Henley">
+                                Henley
+                            </option>
+</select>
+</div>
+<div class="option-group">
+<label>
+                            Warna:
+                            <span id="kodeWarna">Hitam</span>
+</label>
+<div class="color-grid">
+<div class="color-item active" onclick="pilihWarna('Hitam', this)" style="background:#000;">
+</div>
+<div class="color-item" onclick="pilihWarna('Putih', this)" style="background:#fff;">
+</div>
+<div class="color-item" onclick="pilihWarna('Merah', this)" style="background:#8B1E2D;">
+</div>
+<div class="color-item" onclick="pilihWarna('Navy', this)" style="background:#1E3A5F;">
+</div>
+<div class="color-item" onclick="pilihWarna('Abu', this)" style="background:#777;">
+</div>
+<div class="color-item" onclick="pilihWarna('Hijau Army', this)" style="background:#4B5320;">
+</div>
+<div class="color-item" onclick="pilihWarna('Coklat', this)" style="background:#6B3E26;">
+</div>
+<div class="color-item" onclick="pilihWarna('Kuning', this)" style="background:#FFD166;">
+</div>
+<div class="color-item" onclick="pilihWarna('Orange', this)" style="background:#F77F00;">
+</div>
+<div class="color-item" onclick="pilihWarna('Pink', this)" style="background:#FF6B81;">
+</div>
+</div>
+</div>
+<div class="size-chart">
+<div class="size-chart-header">
+<strong>Size Chart</strong>
+<span>Ukuran dalam cm</span>
+</div>
+<table>
+<thead>
+<tr>
+<th>Size</th>
+<th>Panjang</th>
+<th>Lebar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S</td>
+<td>65</td>
+<td>48</td>
+</tr>
+<tr>
+<td>M</td>
+<td>68</td>
+<td>50</td>
+</tr>
+<tr>
+<td>L</td>
+<td>70</td>
+<td>52</td>
+</tr>
+<tr>
+<td>XL</td>
+<td>72</td>
+<td>55</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="variant-order-box">
+<div class="variant-order-header">
+<div>
+<h3>Rincian Pesanan</h3>
+<p>Tambahkan ukuran dan tipe lengan sesuai kebutuhan sebelum masuk keranjang.</p>
+</div>
+</div>
+<div class="variant-list" id="variantList"></div>
+<div class="variant-add-row">
+<button class="variant-add-button" onclick="tambahVarian()" type="button">
+<i class="bi bi-plus-circle"></i>
+                                Tambah Ukuran
+                            </button>
+</div>
+<div class="variant-summary">
+<span>Total Pesanan</span>
+<strong>
+<span id="totalVarian">0</span> pcs
+                            </strong>
+</div>
+</div>
+<button class="btn-order" onclick="tambahKeranjang()" type="button">
+<i class="bi bi-cart-plus"></i>
+
+                        Masukkan ke Keranjang
+
+                    </button>
+<a class="btn-order" href="design-studio.html" id="designStudioLink" style="display:flex;justify-content:center;align-items:center;margin-top:12px;text-decoration:none;">
+<i class="bi bi-palette"></i>  Buat Desain di Studio
+                    </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script src="assets/js/product-images.js?v=20260830-v3"></script>
+<script>
+
+
+
+const urlParams = new URLSearchParams(window.location.search);
+const produk = urlParams.get("produk");
+
+const designStudioLink = document.getElementById("designStudioLink");
+
+if (designStudioLink && produk) {
+    designStudioLink.href =
+        "design-studio.html?produk=" +
+        encodeURIComponent(produk);
+}
+
+const namaProduk = document.getElementById("namaProduk");
+const bahanSelect = document.getElementById("bahan");
+const gambarProduk = document.getElementById("gambarProduk");
+const hargaElement = document.getElementById("harga");
+const kerahBox = document.getElementById("kerahBox");
+const kerahSelect = document.getElementById("kerah");
+const variantList = document.getElementById("variantList");
+const totalVarian = document.getElementById("totalVarian");
+
+let ukuranPilihan = ["S", "M", "L", "XL"];
+const lenganPilihan = ["Pendek", "Panjang"];
+
+let varianPesanan = [
+    {
+        ukuran: "S",
+        lengan: "Pendek",
+        jumlah: 1
+    }
+];
+
+const dataProduk = {
+    kaos: {
+        nama: "Kaos Custom",
+        gambar: "assets/Image/Kaos Produk.png",
+        bahan: ["Combed 24s", "Combed 30s"]
+    },
+    jersey: {
+        nama: "Jersey Custom",
+        gambar: "assets/Image/Jersey O-neck.png",
+        bahan: ["Dryfit", "Milano", "Serena"],
+        kerahGambar: {
+            "O-Neck": "assets/Image/Jersey O-neck.png",
+            "V-Neck": "assets/Image/Jersey V-neck.png",
+            "Kerah Polo": "assets/Image/Jersey Polo-neck.png",
+            "Henley": "assets/Image/Jersey Henley-neck.png"
+        }
+    },
+    hoodie: {
+        nama: "Hoodie Custom",
+        gambar: "assets/Image/Hoodie Produk.png",
+        bahan: ["Fleece", "Baby Terry"]
+    },
+    polo: {
+        nama: "Polo Shirt",
+        gambar: "assets/Image/Polo Produk.png",
+        bahan: ["Lacoste CVC", "Lacoste PE"]
+    },
+    korsa: {
+        nama: "Kaos Korsa",
+        gambar: "assets/Image/Korsa Produk.png",
+        bahan: ["Cotton Combed"]
+    },
+    rompi: {
+        nama: "Rompi Custom",
+        gambar: "assets/Image/Rompi Produk.png",
+        bahan: ["Taslan", "Drill"]
+    }
+};
+
+const canonicalCatalogImages = {
+    kaos: "assets/Image/Kaos Produk.png",
+    jersey: "assets/Image/Jersey Produk.png",
+    hoodie: "assets/Image/Hoodie Produk.png",
+    polo: "assets/Image/Polo Produk.png",
+    korsa: "assets/Image/Korsa Produk.png",
+    rompi: "assets/Image/Rompi Produk.png"
+};
+
+const detailMockupImages = {
+    kaos: "assets/img/kaos-custom-front.png",
+    jersey: "assets/img/jersey-custom-front.png",
+    hoodie: "assets/img/hoodie-custom-front.png",
+    polo: "assets/img/polo-shirt-front.png",
+    korsa: "assets/img/kaos-korsa-front.png",
+    rompi: "assets/img/rompi-custom-front.png"
+};
+
+function detailImageForCategory(category) {
+    const value = String(category || "").toLowerCase();
+    const order = ["korsa", "hoodie", "jersey", "polo", "rompi", "kaos"];
+    for (const name of order) {
+        if (value.includes(name)) return detailMockupImages[name];
+    }
+    return detailMockupImages.kaos;
+}
+
+function renderDetailGallery(category) {
+    const gallery = document.getElementById("detailGallery");
+    const main = document.getElementById("gambarProduk");
+
+    if (!gallery || !main) {
+        return;
+    }
+
+    const images =
+        window.jidoorProductImages
+            ? window.jidoorProductImages.resolveDetail(category)
+            : [];
+
+    if (!images.length) {
+        gallery.innerHTML = "";
+        return;
+    }
+
+    const labels = [
+        "Tampilan depan",
+        "Tampilan belakang",
+        "Detail produk",
+        "Detail bahan"
+    ];
+
+    gallery.innerHTML = images.map(function (src, index) {
+        return `
+            <button
+                type="button"
+                class="detail-thumb${index === 0 ? " active" : ""}"
+                data-image="${src}"
+                aria-label="${labels[index]}"
+            >
+                <img src="${src}" alt="${labels[index]}">
+            </button>
+        `;
+    }).join("");
+
+    gallery.querySelectorAll(".detail-thumb").forEach(function (button) {
+        button.addEventListener("click", function () {
+            main.src = button.dataset.image;
+
+            gallery.querySelectorAll(".detail-thumb").forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+            button.classList.add("active");
+        });
+    });
+
+    main.src = images[0];
+}
+
+function canonicalImageForCategory(category) {
+    const key = String(category || "").toLowerCase();
+    for (const name in canonicalCatalogImages) {
+        if (key.includes(name)) return canonicalCatalogImages[name];
+    }
+    return "";
+}
+
+const hargaProduk = {
+    kaos: {
+        "Combed 24s": 70000,
+        "Combed 30s": 75000
+    },
+    jersey: {
+        "Dryfit": 90000,
+        "Milano": 100000,
+        "Serena": 110000
+    },
+    hoodie: {
+        "Fleece": 150000,
+        "Baby Terry": 140000
+    },
+    polo: {
+        "Lacoste CVC": 130000,
+        "Lacoste PE": 120000
+    },
+    korsa: {
+        "Cotton Combed": 80000
+    },
+    rompi: {
+        "Taslan": 110000,
+        "Drill": 120000
+    }
+};
+
+function resolveAdminProduct() {
+
+    if (window.jidoorActiveProduct) {
+        return window.jidoorActiveProduct;
+    }
+
+    try {
+        const products =
+            JSON.parse(
+                localStorage.getItem("jidoorProducts") || "[]"
+            );
+
+        if (!Array.isArray(products)) {
+            return null;
+        }
+
+        const requested =
+            String(produk || "").toLowerCase();
+
+        const normalize = function (value) {
+            return String(value || "")
+                .toLowerCase()
+                .replace(/custom|shirt/g, "")
+                .replace(/[^a-z0-9]+/g, "");
+        };
+
+        const requestedKey = normalize(requested);
+
+        const found = products.find(function (product) {
+            const candidates = [
+                product.id,
+                product.slug,
+                product.nama
+            ];
+
+            return candidates.some(function (value) {
+                return normalize(value) === requestedKey;
+            });
+        });
+
+        if (found && found.aktif !== false) {
+            window.jidoorActiveProduct = found;
+            return found;
+        }
+    } catch (error) {
+    
+    }
+
+    return null;
+}
+
+function applyProductToDetail(product) {
+
+    if (!product) {
+        return;
+    }
+
+    const category =
+        String(product.kategori || "")
+            .toLowerCase();
+
+    const materials =
+        Array.isArray(product.material) &&
+        product.material.length
+            ? product.material
+            : ["Pilihan bahan"];
+
+    const sizes =
+        Array.isArray(product.ukuran) &&
+        product.ukuran.length
+            ? product.ukuran
+            : ["S", "M", "L", "XL"];
+
+    const colors =
+        Array.isArray(product.warna)
+            ? product.warna
+            : [];
+
+    namaProduk.innerText =
+        product.nama || "Produk Jidoor";
+
+    gambarProduk.src =
+        window.jidoorProductImages
+            ? window.jidoorProductImages.resolveDetail(product)[0]
+            : detailImageForCategory(category);
+
+    gambarProduk.onerror = function () {
+        this.onerror = null;
+        this.src = "assets/img/kaos-custom-front.png";
+    };
+
+    renderDetailGallery(product);
+
+    bahanSelect.innerHTML =
+        materials
+            .map(function (bahan) {
+                return `
+                    <option value="${bahan}">
+                        ${bahan}
+                    </option>
+                `;
+            })
+            .join("");
+
+    ukuranPilihan = sizes;
+
+    if (category.includes("jersey")) {
+
+        kerahBox.style.display = "flex";
+
+    } else {
+
+        kerahBox.style.display = "none";
+    }
+
+    if (colors.length) {
+
+        const colorGrid =
+            document.querySelector(".color-grid");
+
+        if (colorGrid) {
+
+            const colorMap = {
+                "Putih": "#FFFFFF",
+                "Hitam": "#111111",
+                "Navy": "#1E3A5F",
+                "Merah": "#B21F35",
+                "Maroon": "#8B1E2D",
+                "Abu": "#808080",
+                "Hijau Army": "#4B5320",
+                "Coklat": "#6B3E26",
+                "Kuning": "#FFD166",
+                "Orange": "#F57C00",
+                "Oranye": "#F57C00",
+                "Pink": "#FF5F7A"
+            };
+
+            colorGrid.innerHTML =
+                colors.map(function (namaWarna, index) {
+
+                    const hex =
+                        colorMap[namaWarna] ||
+                        "#CCCCCC";
+
+                    return `
+                        <button
+                            type="button"
+                            class="color-item${index === 0 ? " active" : ""}"
+                            style="background-color:${hex};"
+                            data-color-name="${namaWarna}"
+                            onclick="pilihWarna('${String(namaWarna).replace(/'/g, "\\'")}', this)"
+                        ></button>
+                    `;
+
+                }).join("");
+
+            document.getElementById(
+                "kodeWarna"
+            ).innerText = colors[0];
+        }
+    }
+
+    renderVarian();
+    updateHarga();
+}
+
+const resolvedAdminProduct =
+    resolveAdminProduct();
+
+if (resolvedAdminProduct) {
+
+    applyProductToDetail(
+        resolvedAdminProduct
+    );
+
+} else if (dataProduk[produk]) {
+
+    const data = dataProduk[produk];
+
+    namaProduk.innerText = data.nama;
+    gambarProduk.src =
+        window.jidoorProductImages
+            ? window.jidoorProductImages.resolveDetail(produk)[0]
+            : detailImageForCategory(produk);
+    bahanSelect.innerHTML = "";
+
+    data.bahan.forEach(function (bahan) {
+
+        const option =
+            document.createElement("option");
+
+        option.value = bahan;
+        option.textContent = bahan;
+
+        bahanSelect.appendChild(option);
+    });
+
+    if (produk === "jersey") {
+
+        kerahBox.style.display = "flex";
+        gambarProduk.src =
+            detailImageForCategory("jersey");
+
+    } else {
+
+        kerahBox.style.display = "none";
+    }
+
+    renderDetailGallery(produk);
+    updateHarga();
+    renderVarian();
+}
+
+if (produk === "jersey" && kerahSelect) {
+
+    kerahSelect.addEventListener(
+        "change",
+        function () {
+
+            const data = dataProduk.jersey;
+            const gambarBaru =
+                data.kerahGambar[this.value];
+
+            if (gambarBaru) {
+                gambarProduk.src = gambarBaru;
+            }
+
+            updateHarga();
+        }
+    );
+}
+
+bahanSelect.addEventListener(
+    "change",
+    updateHarga
+);
+
+function hitungHargaSatuan() {
+
+    const adminProduct =
+        window.jidoorActiveProduct;
+
+    if (
+        adminProduct &&
+        String(
+            adminProduct.id ||
+            adminProduct.slug ||
+            adminProduct.nama ||
+            ""
+        )
+    ) {
+        let harga =
+            typeof adminProduct.harga === "number"
+                ? adminProduct.harga
+                : parseInt(
+                    String(adminProduct.harga || "")
+                        .replace(/[^0-9]/g, ""),
+                    10
+                ) || 0;
+
+        if (
+            produk === "jersey" &&
+            kerahSelect
+        ) {
+            if (kerahSelect.value === "Kerah Polo") {
+                harga += 15000;
+            }
+
+            if (kerahSelect.value === "Henley") {
+                harga += 10000;
+            }
+        }
+
+        return harga;
+    }
+
+    if (!hargaProduk[produk]) {
+        return 0;
+    }
+
+    const bahan = bahanSelect.value;
+
+    let harga =
+        hargaProduk[produk][bahan] || 0;
+
+    if (produk === "jersey" && kerahSelect) {
+
+        if (kerahSelect.value === "Kerah Polo") {
+            harga += 15000;
+        }
+
+        if (kerahSelect.value === "Henley") {
+            harga += 10000;
+        }
+    }
+
+    return harga;
+}
+
+function updateHarga() {
+
+    let harga = hitungHargaSatuan();
+
+    hargaElement.innerText =
+        "Rp " +
+        harga.toLocaleString("id-ID");
+}
+
+function pilihWarna(warna, element) {
+
+    document.getElementById("kodeWarna").innerText =
+        warna;
+
+    document.querySelectorAll(
+        ".color-item"
+    ).forEach(function (item) {
+
+        item.classList.remove("active");
+    });
+
+    if (element) {
+        element.classList.add("active");
+    }
+}
+
+function renderVarian() {
+
+    if (!variantList) {
+        return;
+    }
+
+    variantList.innerHTML =
+        varianPesanan.map(function (varian, index) {
+
+            return `
+                <div class="variant-row">
+
+                    <div class="variant-field">
+                        <label>Ukuran</label>
+
+                        <select
+                            onchange="ubahUkuranVarian(${index}, this.value)">
+
+                            ${ukuranPilihan.map(function (ukuran) {
+                                return `
+                                    <option
+                                        value="${ukuran}"
+                                        ${ukuran === varian.ukuran ? "selected" : ""}>
+                                        ${ukuran}
+                                    </option>
+                                `;
+                            }).join("")}
+
+                        </select>
+                    </div>
+
+                    <div class="variant-field">
+                        <label>Tipe Lengan</label>
+
+                        <select
+                            onchange="ubahLenganVarian(${index}, this.value)">
+
+                            ${lenganPilihan.map(function (lengan) {
+                                return `
+                                    <option
+                                        value="${lengan}"
+                                        ${lengan === varian.lengan ? "selected" : ""}>
+                                        ${lengan}
+                                    </option>
+                                `;
+                            }).join("")}
+
+                        </select>
+                    </div>
+
+                    <div class="variant-field variant-quantity">
+                        <label>Jumlah</label>
+
+                        <div class="quantity-control">
+                            <button
+                                type="button"
+                                onclick="ubahJumlahVarian(${index}, -1)">
+                                −
+                            </button>
+
+                            <input
+                                type="number"
+                                min="1"
+                                value="${varian.jumlah}"
+                                onchange="setJumlahVarian(${index}, this.value)">
+
+                            <button
+                                type="button"
+                                onclick="ubahJumlahVarian(${index}, 1)">
+                                +
+                            </button>
+                        </div>
+                    </div>
+
+                    ${
+                        varianPesanan.length > 1
+                            ? `
+                                <button
+                                    type="button"
+                                    class="variant-remove"
+                                    onclick="hapusVarian(${index})"
+                                    title="Hapus varian">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            `
+                            : ""
+                    }
+
+                </div>
+            `;
+        }).join("");
+
+    updateTotalVarian();
+}
+
+function tambahVarian() {
+
+    varianPesanan.push({
+        ukuran: "S",
+        lengan: "Pendek",
+        jumlah: 1
+    });
+
+    renderVarian();
+}
+
+function hapusVarian(index) {
+
+    if (varianPesanan.length <= 1) {
+        return;
+    }
+
+    varianPesanan.splice(index, 1);
+    renderVarian();
+}
+
+function ubahUkuranVarian(index, value) {
+    varianPesanan[index].ukuran = value;
+    renderVarian();
+}
+
+function ubahLenganVarian(index, value) {
+    varianPesanan[index].lengan = value;
+    renderVarian();
+}
+
+function setJumlahVarian(index, value) {
+
+    let jumlah = parseInt(value, 10) || 1;
+
+    if (jumlah < 1) {
+        jumlah = 1;
+    }
+
+    varianPesanan[index].jumlah = jumlah;
+
+    renderVarian();
+}
+
+function ubahJumlahVarian(index, perubahan) {
+
+    let jumlah =
+        Number(varianPesanan[index].jumlah) || 1;
+
+    jumlah += perubahan;
+
+    if (jumlah < 1) {
+        jumlah = 1;
+    }
+
+    varianPesanan[index].jumlah = jumlah;
+
+    renderVarian();
+}
+
+function updateTotalVarian() {
+
+    const total =
+        varianPesanan.reduce(
+            function (sum, varian) {
+                return sum +
+                    (Number(varian.jumlah) || 0);
+            },
+            0
+        );
+
+    if (totalVarian) {
+        totalVarian.innerText = total;
+    }
+}
+
+function tambahKeranjang() {
+
+    const keranjang =
+        JSON.parse(
+            localStorage.getItem("keranjang")
+        ) || [];
+
+    const adminProduct =
+        resolveAdminProduct();
+
+    const nama =
+        adminProduct?.nama ||
+        namaProduk.innerText;
+
+    const bahan =
+        bahanSelect.value;
+
+    let kerah = "-";
+
+    if (produk === "jersey") {
+        kerah = kerahSelect.value;
+    }
+
+    const warna =
+        document.getElementById("kodeWarna").innerText;
+
+    const gambar =
+        window.jidoorProductImages
+            ? window.jidoorProductImages.resolve(adminProduct || {
+                produk: nama
+            })
+            : gambarProduk.src;
+
+    const harga =
+        hitungHargaSatuan();
+
+    if (!harga) {
+        alert(
+            "Harga produk tidak ditemukan. Silakan kembali ke halaman Produk dan buka produk tersebut lagi."
+        );
+        return;
+    }
+
+    const variants =
+        varianPesanan
+            .filter(function (varian) {
+                return Number(varian.jumlah) > 0;
+            })
+            .map(function (varian) {
+                return {
+                    ukuran: varian.ukuran,
+                    lengan: varian.lengan,
+                    jumlah: Number(varian.jumlah)
+                };
+            });
+
+    const jumlah =
+        variants.reduce(
+            function (total, varian) {
+                return total + varian.jumlah;
+            },
+            0
+        );
+
+    if (!jumlah) {
+        alert("Silakan tentukan jumlah pesanan.");
+        return;
+    }
+
+    const data = {
+        produk: nama,
+        nama: nama,
+        productId:
+            adminProduct?.id ||
+            adminProduct?.slug ||
+            "",
+        ukuran: variants[0].ukuran,
+        jumlah: jumlah,
+        variants: variants,
+        bahan: bahan,
+        kerah: kerah,
+        warna: warna,
+        harga: harga,
+        lengan: variants[0].lengan,
+        gambar: gambar
+    };
+
+    keranjang.push(data);
+
+    localStorage.setItem(
+        "keranjang",
+        JSON.stringify(keranjang)
+    );
+
+    alert(
+        "Rincian pesanan berhasil ditambahkan ke keranjang."
+    );
+
+    window.location.href = "keranjang.html";
+}
+
+document.addEventListener(
+    "jidoorProductReady",
+    function (event) {
+
+        const product =
+            event.detail &&
+            event.detail.product
+                ? event.detail.product
+                : window.jidoorActiveProduct;
+
+        if (product) {
+            applyProductToDetail(product);
+            return;
+        }
+
+        const sizes =
+            event.detail &&
+            Array.isArray(event.detail.sizes)
+                ? event.detail.sizes
+                : [];
+
+        if (sizes.length) {
+            ukuranPilihan = sizes;
+            renderVarian();
+        }
+
+        updateHarga();
+    }
+);
+
+
+</script>
+
+<script src="assets/js/product-sync.js?v=20260902-admin-sync"></script>
+<script src="assets/js/auth.js"></script>
+</body>
+</html>
